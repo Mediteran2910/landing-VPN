@@ -42,6 +42,13 @@ export default function MobileNav() {
           href="#shop"
           className="text-2xl hover:text-gray-300"
         >
+          Home
+        </a>
+        <a
+          onClick={toggleMenu}
+          href="#shop"
+          className="text-2xl hover:text-gray-300"
+        >
           Shop
         </a>
         <a
