@@ -1,6 +1,6 @@
 import LottieAnimation from "@/components/lottieAnimation";
 import SubscribeForm from "@/components/subscribeForm";
-import Image from "next/image";
+import Router from "@/components/Router";
 export default function Home() {
   return (
     <>
@@ -252,39 +252,9 @@ export default function Home() {
           id="kickstarter-announcement"
           className="w-full min-h-screen py-20 flex flex-col gap-10 bg-gradient-to-r from-[#0D0D0D] 44% via-[#171717] 50% to-[#0D0D0D] 56%"
         >
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6 w-full md:mb-20">
-            <div className="flex flex-col border border-white rounded-lg p-4 w-[95%] md:w-auto">
-              <p className="text-3xl font-bold mb-10">Single Router</p>
-              <Image
-                src="/images/device.jpg"
-                width={400}
-                height={300}
-                alt="device image"
-                className="border self-center"
-              />
-              <div className="flex justify-between items-center mt-8 mb-2">
-                <p className="font-bold text-4xl">€85</p>
-                <button className="px-4 py-2 bg-gray-800 rounded hover:bg-gray-700 w-1/3 rounded-lg">
-                  Details
-                </button>
-              </div>
-            </div>
-            <div className="flex flex-col border border-white rounded-lg p-4 w-[95%] md:w-auto">
-              <p className="text-3xl font-bold mb-10">Pair Routers</p>
-              <Image
-                src="/images/device.jpg"
-                width={400}
-                height={300}
-                alt="device image"
-                className="border self-center"
-              />
-              <div className="flex justify-between items-center mt-8 mb-2">
-                <p className="font-bold text-4xl">€150</p>
-                <button className="px-4 py-2 bg-gray-800 rounded hover:bg-gray-700 w-1/3 rounded-lg">
-                  Details
-                </button>
-              </div>
-            </div>
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 w-full md:mb-20 w-screen">
+            <Router price="85" />
+            <Router price="150" />
           </div>
           <div className="flex flex-col md:flex-row items-start justify-center gap-10 w-full max-w-[95vw] lg:max-w-[80vw] mx-auto">
             <div className="w-full md:w-1/2 text-left text-gray-300">
