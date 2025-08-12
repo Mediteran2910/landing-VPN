@@ -14,6 +14,9 @@ export default function Header() {
         <MobileNav />
         <div className="hidden lg:flex lg:space-x-8">
           <a href="#shop" className="text-white hover:text-gray-300">
+            Home
+          </a>
+          <a href="#shop" className="text-white hover:text-gray-300">
             Shop
           </a>
           <a href="#docs" className="text-white hover:text-gray-300">

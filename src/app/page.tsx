@@ -1,4 +1,5 @@
 import LottieAnimation from "@/components/lottieAnimation";
+import SubscribeForm from "@/components/subscribeForm";
 export default function Home() {
   return (
     <>
@@ -167,151 +168,124 @@ export default function Home() {
         </section>
         <article
           id="comparison"
-          className="w-full py-20 bg-gradient-to-r from-[#0D0D0D] 44% via-[#171717] 50% to-[#0D0D0D] 56%"
+          className="w-full py-20 bg-gradient-to-r from-[#F5F5F5] 44% via-[#BEBEBE] 50% to-[#F5F5F5] 56%"
         >
-          <div className="max-w-[95vw] lg:max-w-[65vw] mx-auto text-center">
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-10 bg-clip-text text-transparent bg-gradient-to-r from-gray-200 to-gray-500 px-1">
-              Our Solution vs. Traditional VPNs
+          <div className="max-w-[95vw] lg:max-w-[65vw] mx-auto text-center px-6 md:px-12 text-black">
+            <h2
+              className="text-5xl md:text-6xl lg:text-7xl font-extrabold bg-clip-text text-transparent 
+    bg-gradient-to-r from-gray-900 via-gray-700 to-gray-500 px-1 mb-16 tracking-tight"
+            >
+              We are better.
             </h2>
-
-            <div className="flex flex-col md:flex-row justify-between gap-10">
-              {/* Traditional VPNs Column */}
-              <div className="w-full md:w-1/2 p-6 rounded-xl border border-gray-700 bg-gray-900 shadow-lg">
-                <h3 className="text-2xl font-semibold mb-4 text-gray-400">
-                  Traditional Data Center VPNs
-                </h3>
-                <ul className="text-left space-y-4">
-                  <li className="flex items-start gap-2">
-                    <span className="text-red-500 mt-1">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-5 w-5"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    </span>
-                    <p className="text-gray-400">
-                      **Subscription-based costs** with recurring monthly or
-                      yearly fees.
-                    </p>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-red-500 mt-1">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-5 w-5"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    </span>
-                    <p className="text-gray-400">
-                      Shared, **flagged IP addresses** that are easily detected
-                      and blocked.
-                    </p>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-red-500 mt-1">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-5 w-5"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    </span>
-                    <p className="text-gray-400">
-                      Requires **software installation** and configuration on
-                      every device.
-                    </p>
-                  </li>
-                </ul>
+            <div className="hidden md:flex mb-12">
+              <div className="w-2/5 text-right pr-6">
+                <h4 className="text-3xl md:text-4xl font-bold text-[#2c2c2c] tracking-wide">
+                  Our Solution
+                </h4>
               </div>
-              <div className="w-full md:w-1/2 p-6 rounded-xl border border-gray-700 bg-gray-900 shadow-lg">
-                <h3 className="text-2xl font-semibold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-gray-200 to-gray-500">
-                  Our VPN Solution
-                </h3>
-                <ul className="text-left space-y-4">
-                  <li className="flex items-start gap-2">
-                    <span className="text-green-500 mt-1">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-5 w-5"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    </span>
-                    <p className="text-gray-200">
-                      **One-time payment**, with no recurring subscription fees.
-                    </p>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-green-500 mt-1">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-5 w-5"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    </span>
-                    <p className="text-gray-200">
-                      **Dedicated residential IPs** that are undetectable and
-                      reliable.
-                    </p>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-green-500 mt-1">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-5 w-5"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    </span>
-                    <p className="text-gray-200">
-                      **Hardware-based** protection for your entire home network
-                      at once.
-                    </p>
-                  </li>
-                </ul>
+              <div className="w-1/5" />
+              <div className="w-2/5 text-left pl-6">
+                <h4 className="text-3xl md:text-4xl font-bold text-[#2c2c2c] tracking-wide">
+                  Traditional VPNs
+                </h4>
               </div>
+            </div>
+            <div className="space-y-20">
+              {[
+                {
+                  left: "One-time payment for a lifetime of access, no subscriptions.",
+                  icon: <svg className="h-10 w-10 text-gray-700" />,
+                  right: "Endless subscription fees to maintain service.",
+                  label: "Pricing",
+                },
+                {
+                  left: "Dedicated residential IP that bypasses blocks.",
+                  icon: <svg className="h-10 w-10 text-gray-700" />,
+                  right:
+                    "Shared, low-reputation IPs from anonymous data centers.",
+                  label: "IP Address",
+                },
+                {
+                  left: "Hardware-based protection for your entire network.",
+                  icon: <svg className="h-10 w-10 text-gray-700" />,
+                  right:
+                    "Requires software on every device and leaves others unprotected.",
+                  label: "Security",
+                },
+                {
+                  left: "Your home IP works everywhere, bypassing all geo-blocks.",
+                  icon: <svg className="h-10 w-10 text-gray-700" />,
+                  right:
+                    "Easily detected and blocked by most streaming and financial sites.",
+                  label: "Geo-Blocking",
+                },
+                {
+                  left: "True plug-and-play simplicity with zero configuration.",
+                  icon: <svg className="h-10 w-10 text-gray-700" />,
+                  right: "Complicated configuration on multiple devices.",
+                  label: "Setup",
+                },
+              ].map((item, idx) => (
+                <div
+                  key={idx}
+                  className="flex flex-col md:flex-row items-center md:items-start text-left"
+                >
+                  <div className="w-full md:w-2/5 text-right pr-6">
+                    <p className="text-lg md:text-xl text-black font-semibold leading-relaxed">
+                      {item.left}
+                    </p>
+                  </div>
+                  <div className="w-full md:w-1/5 flex flex-col items-center">
+                    {item.icon}
+                    <span className="text-sm font-medium mt-1 text-gray-600 tracking-wide">
+                      {item.label}
+                    </span>
+                  </div>
+                  <div className="w-full md:w-2/5 text-left pl-6">
+                    <p className="text-lg md:text-xl text-gray-700 font-normal leading-relaxed">
+                      {item.right}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </article>
+        <section
+          id="kickstarter-announcement"
+          className="w-full py-20 flex flex-col md:flex-row justify-center items-center gap-10 bg-gradient-to-r from-[#0D0D0D] 44% via-[#171717] 50% to-[#0D0D0D] 56%"
+        >
+          <div className="max-w-[95vw] lg:max-w-[65vw] mx-auto flex flex-col md:flex-row gap-10 items-start w-full">
+            {/* Left Text Content */}
+            <div className="w-full md:w-2/5 text-left text-gray-300">
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-gray-200 to-gray-500 px-1">
+                Kickstarter Launch — 29.9.2025
+              </h2>
+              <hr className="w-24 h-1 bg-gray-600 my-4 rounded-full" />
+              <p className="text-lg md:text-xl mb-4 font-semibold">
+                Early applicants get 35% off and lifetime priority support!
+              </p>
+              <ul className="custom-list-style space-y-2 text-gray-400 text-base md:text-lg">
+                <li>
+                  Device in the pair: <span className="font-bold">€150</span>{" "}
+                  (later €195)
+                </li>
+                <li>
+                  Single device: <span className="font-bold">€85</span> (later
+                  €120)
+                </li>
+              </ul>
+            </div>
+
+            {/* Form */}
+            <div className="w-full md:w-3/5 bg-[#1a1a1a] p-8 rounded-lg shadow-lg">
+              <h3 className="text-3xl font-bold mb-6 text-gray-200">
+                Subscribe for Early Access
+              </h3>
+              <SubscribeForm />
+            </div>
+          </div>
+        </section>
       </main>
     </>
   );
