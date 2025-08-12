@@ -1,12 +1,11 @@
 import LottieAnimation from "@/components/lottieAnimation";
 import SubscribeForm from "@/components/subscribeForm";
+import Image from "next/image";
 export default function Home() {
   return (
     <>
       <main className="relative min-h-screen">
-        {/* Hero Section */}
         <section className="relative h-screen flex flex-col justify-center items-center text-center text-white p-4">
-          {/* Background Video and Overlay */}
           <video
             autoPlay
             muted
@@ -16,8 +15,6 @@ export default function Home() {
             <source src="https://video-previews.elements.envatousercontent.com/a236a9dc-6c03-49e7-a481-e6c9dd464a62/watermarked_preview/watermarked_preview.mp4" />
           </video>
           <div className="absolute inset-0 bg-black opacity-50 -z-10"></div>
-
-          {/* Hero Content */}
           <div className="relative z-10 max-w-4xl">
             <h1 className="text-4xl md:text-6xl font-bold mb-4">
               VPN SOLUTION
@@ -253,36 +250,83 @@ export default function Home() {
         </article>
         <section
           id="kickstarter-announcement"
-          className="w-full py-20 flex flex-col md:flex-row justify-center items-center gap-10 bg-gradient-to-r from-[#0D0D0D] 44% via-[#171717] 50% to-[#0D0D0D] 56%"
+          className="w-full min-h-screen py-20 flex flex-col gap-10 bg-gradient-to-r from-[#0D0D0D] 44% via-[#171717] 50% to-[#0D0D0D] 56%"
         >
-          <div className="max-w-[95vw] lg:max-w-[65vw] mx-auto flex flex-col md:flex-row gap-10 items-start w-full">
-            {/* Left Text Content */}
-            <div className="w-full md:w-2/5 text-left text-gray-300">
-              <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-gray-200 to-gray-500 px-1">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 w-full md:mb-20">
+            <div className="flex flex-col border border-white rounded-lg p-4 w-[95%] md:w-auto">
+              <p className="text-3xl font-bold mb-10">Single Router</p>
+              <Image
+                src="/images/device.jpg"
+                width={400}
+                height={300}
+                alt="device image"
+                className="border self-center"
+              />
+              <div className="flex justify-between items-center mt-8 mb-2">
+                <p className="font-bold text-4xl">€85</p>
+                <button className="px-4 py-2 bg-gray-800 rounded hover:bg-gray-700 w-1/3 rounded-lg">
+                  Details
+                </button>
+              </div>
+            </div>
+            <div className="flex flex-col border border-white rounded-lg p-4 w-[95%] md:w-auto">
+              <p className="text-3xl font-bold mb-10">Pair Routers</p>
+              <Image
+                src="/images/device.jpg"
+                width={400}
+                height={300}
+                alt="device image"
+                className="border self-center"
+              />
+              <div className="flex justify-between items-center mt-8 mb-2">
+                <p className="font-bold text-4xl">€150</p>
+                <button className="px-4 py-2 bg-gray-800 rounded hover:bg-gray-700 w-1/3 rounded-lg">
+                  Details
+                </button>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col md:flex-row items-start justify-center gap-10 w-full max-w-[95vw] lg:max-w-[80vw] mx-auto">
+            <div className="w-full md:w-1/2 text-left text-gray-300">
+              <h2 className="text-3xl md:text-4xl lg:text-7xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-gray-200 to-gray-500 px-1">
                 Kickstarter Launch — 29.9.2025
               </h2>
               <hr className="w-24 h-1 bg-gray-600 my-4 rounded-full" />
-              <p className="text-lg md:text-xl mb-4 font-semibold">
-                Early applicants get 35% off and lifetime priority support!
-              </p>
-              <ul className="custom-list-style space-y-2 text-gray-400 text-base md:text-lg">
-                <li>
-                  Device in the pair: <span className="font-bold">€150</span>{" "}
-                  (later €195)
-                </li>
-                <li>
-                  Single device: <span className="font-bold">€85</span> (later
-                  €120)
-                </li>
-              </ul>
+              <div className="space-y-4 text-gray-200">
+                <p className="text-2xl md:text-3xl text-gray-400">
+                  Early Bird Offers — Save up to 35%!
+                </p>
+                <ul className="space-y-2 text-lg md:text-xl">
+                  <li>
+                    <span className="font-semibold">Pair of devices:</span>{" "}
+                    <span className="text-green-300 font-bold">€150</span>{" "}
+                    <span className="line-through text-gray-500">€195</span>{" "}
+                    <span className="text-green-400">(Save €45)</span>
+                  </li>
+                  <li>
+                    <span className="font-semibold">Single device:</span>{" "}
+                    <span className="text-green-300 font-bold">€85</span>{" "}
+                    <span className="line-through text-gray-500">€120</span>{" "}
+                    <span className="text-green-400">(Save €35)</span>
+                  </li>
+                </ul>
+                <ul className="custom-list-style">
+                  <li>Lifetime priority support</li>
+                  <li>Early shipping before public release</li>
+                  <li>Exclusive backer updates & community access</li>
+                </ul>
+              </div>
             </div>
-
-            {/* Form */}
-            <div className="w-full md:w-3/5 bg-[#1a1a1a] p-8 rounded-lg shadow-lg">
-              <h3 className="text-3xl font-bold mb-6 text-gray-200">
-                Subscribe for Early Access
-              </h3>
-              <SubscribeForm />
+            <div className="flex flex-col items-center md:items-start gap-6 w-full md:w-1/2">
+              <div className="w-full">
+                <LottieAnimation animation="p-and-p.lottie" />
+              </div>
+              <div className="w-full p-4 rounded-lg shadow-lg border border-gray-400">
+                <h3 className="text-xl mb-6 text-gray-200">
+                  Subscribe for Early Access
+                </h3>
+                <SubscribeForm />
+              </div>
             </div>
           </div>
         </section>

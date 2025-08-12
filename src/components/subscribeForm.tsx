@@ -4,7 +4,7 @@ import { useState } from "react";
 export default function SubscribeForm() {
   const [email, setEmail] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     alert(`Thanks for subscribing: ${email}`);
     setEmail("");
@@ -22,7 +22,7 @@ export default function SubscribeForm() {
       />
       <button
         type="submit"
-        className="w-full py-3 bg-gradient-to-r from-gray-400 to-gray-600 hover:from-gray-600 hover:to-gray-400 text-black font-semibold rounded-md transition"
+        className="w-full py-3 bg-gray-400 hover:from-gray-600 hover:to-gray-400 text-black font-semibold rounded-md transition"
       >
         Notify Me
       </button>
