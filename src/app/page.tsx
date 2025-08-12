@@ -1,5 +1,5 @@
-import LottieAnimation from "@/components/lottieAnimation";
-import SubscribeForm from "@/components/subscribeForm";
+import LottieAnimation from "@/components/LottieAnimation";
+import SubscribeForm from "@/components/SubscribeForm";
 import Router from "@/components/Router";
 export default function Home() {
   return (
