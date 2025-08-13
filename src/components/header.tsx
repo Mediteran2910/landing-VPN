@@ -1,6 +1,5 @@
 import Image from "next/image";
-import MobileNav from "./mobileNav";
-
+import MobileNav from "./MobileNav";
 export default function Header() {
   return (
     <header className="w-full relative z-20 border-b border-white">

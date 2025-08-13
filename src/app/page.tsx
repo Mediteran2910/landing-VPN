@@ -1,6 +1,6 @@
 import LottieAnimation from "@/components/LottieAnimation";
 import SubscribeForm from "@/components/SubscribeForm";
-import Router from "@/components/Router";
+import Routers from "@/components/Router";
 export default function Home() {
   return (
     <>
@@ -250,13 +250,27 @@ export default function Home() {
         </article>
         <section
           id="kickstarter-announcement"
-          className="w-full min-h-screen py-20 flex flex-col gap-10 bg-gradient-to-r from-[#0D0D0D] 44% via-[#171717] 50% to-[#0D0D0D] 56%"
+          className="min-h-screen py-20 flex flex-col items-center justify-center gap-10 bg-gradient-to-r from-[#0D0D0D] 44% via-[#171717] 50% to-[#0D0D0D] 56%"
         >
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6 w-full md:mb-20 w-screen">
-            <Router price="85" />
-            <Router price="150" />
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:mb-20 w-[90%] md:w-[65%] mx-auto">
+            <Routers
+              name="Single Router"
+              price="85"
+              alt="single router image"
+              stock
+              sale="120"
+              qty={1}
+            />
+            <Routers
+              name="Pair Routers"
+              price="150"
+              alt="2 routers image"
+              stock
+              sale="195"
+              qty={2}
+            />
           </div>
-          <div className="flex flex-col md:flex-row items-start justify-center gap-10 w-full max-w-[95vw] lg:max-w-[80vw] mx-auto">
+          <div className="flex flex-col md:flex-row items-start justify-center gap-10 w-full max-w-[95vw] lg:max-w-[65vw] mx-auto">
             <div className="w-full md:w-1/2 text-left text-gray-300">
               <h2 className="text-3xl md:text-4xl lg:text-7xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-gray-200 to-gray-500 px-1">
                 Kickstarter Launch — 29.9.2025
@@ -287,11 +301,11 @@ export default function Home() {
                 </ul>
               </div>
             </div>
-            <div className="flex flex-col items-center md:items-start gap-6 w-full md:w-1/2">
+            <div className="flex flex-col items-center md:items-start gap-6 w-full h-[100%] md:w-1/2 border border-gray-400">
               <div className="w-full">
                 <LottieAnimation animation="p-and-p.lottie" />
               </div>
-              <div className="w-full p-4 rounded-lg shadow-lg border border-gray-400">
+              <div className="w-full p-4 rounded-lg shadow-lg ">
                 <h3 className="text-xl mb-6 text-gray-200">
                   Subscribe for Early Access
                 </h3>
