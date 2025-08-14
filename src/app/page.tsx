@@ -47,14 +47,14 @@ export default function Home() {
               </a>
               . Protect your entire network with ease.
             </p>
-            <div className="flex justify-center gap-10">
+            <div className="flex flex-col sm:flex-row justify-center gap-6">
               <a
                 href="#one-time-payment"
-                className=" bg-white/10 border border-white/30 text-white hover:bg-white/80 hover:text-black transition-all duration-300 ease-in-out py-3 px-12 rounded-xl shadow-lg hover:scale-105"
+                className="bg-white/10 border border-white/30 text-white hover:bg-white/80 hover:text-black transition-all duration-300 ease-in-out py-3 px-7 rounded-xl shadow-lg hover:scale-105 text-lg"
               >
                 Why Us?
               </a>
-              <button className="cursor-pointer bg-white/10 border border-white/30 text-white hover:bg-white/80 hover:text-black transition-all duration-300 ease-in-out py-3 px-12 rounded-xl shadow-lg hover:scale-105">
+              <button className="cursor-pointer bg-white/10 border border-white/30 text-white hover:bg-white/80 hover:text-black transition-all duration-300 ease-in-out py-3 px-7 rounded-xl shadow-lg hover:scale-105 text-lg">
                 Shop Now
               </button>
             </div>
