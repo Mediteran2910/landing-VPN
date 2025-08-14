@@ -26,7 +26,7 @@ export default function Routers({ price, alt, sale, name, stock, qty }: Props) {
   const prevImage = () =>
     setCurrent((prev) => (prev - 1 + images.length) % images.length);
   return (
-    <div className="flex flex-col border border-gray-500 rounded-lg p-4 w-[95%] bg-[linear-gradient(120deg,#121212_35%,#303030_80%,#292929_100%)]">
+    <div className="flex flex-col border border-gray-500 rounded-lg p-4 w-[95%] bg-[linear-gradient(120deg,#121212_35%,#262626_80%,#242424_100%)]">
       <p className="text-3xl font-bold my-5">{name}</p>
       <div className="flex overflow-x-auto space-x-4 py-2 scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800">
         <div className="relative w-full h-[300px] rounded border border-gray-700 overflow-hidden">
@@ -80,7 +80,7 @@ export default function Routers({ price, alt, sale, name, stock, qty }: Props) {
           <ShoppingBasket className="w-5 h-5 text-gray-400" />
           <span className="text-gray-400">
             <span className="font-semibold text-gray-200">Quantity:</span>{" "}
-            {`${qty} pieces`}
+            {`${qty} ${qty > 1 ? "routers" : "router"}`}
           </span>
         </li>
         <hr className="custom-hr-product-card" />
@@ -129,14 +129,17 @@ export default function Routers({ price, alt, sale, name, stock, qty }: Props) {
             </span>
           )}
         </p>
-        <button
+        <a
+          href="https://www.kickstarter.com/projects/your-project-id"
+          target="_blank"
+          rel="noopener noreferrer"
           className="cursor-pointer px-4 py-2 w-1/3 text-gray-800 font-bold 
-                   bg-gray-100 border border-transparent rounded-lg 
-                   hover:bg-transparent hover:border-gray-200 hover:text-gray-200 
-                   transition duration-300 ease-in-out"
+             bg-gray-100 border border-transparent rounded-lg 
+             hover:bg-transparent hover:border-gray-200 hover:text-gray-200 
+             transition duration-300 ease-in-out text-center"
         >
           Buy
-        </button>
+        </a>
       </div>
     </div>
   );

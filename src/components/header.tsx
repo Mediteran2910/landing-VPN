@@ -2,7 +2,7 @@ import Image from "next/image";
 import MobileNav from "./MobileNav";
 export default function Header() {
   return (
-    <header className="w-full relative z-20 border-b border-white">
+    <header className="w-full relative z-20 border-b border-gray-600 bg-gradient-to-r from-[#0D0D0D] via-[#171717] to-[#0D0D0D]">
       <nav className="w-[95%] lg:w-[70%] mx-auto flex justify-between items-center py-4">
         <Image
           src="/your-logo.svg"
