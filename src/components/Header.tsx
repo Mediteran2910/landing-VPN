@@ -1,5 +1,7 @@
 import Image from "next/image";
 import MobileNav from "./MobileNav";
+import Link from "next/link";
+
 export default function Header() {
   return (
     <header className="w-full relative z-20 border-b border-gray-600 bg-gradient-to-r from-[#0D0D0D] via-[#171717] to-[#0D0D0D]">
@@ -15,9 +17,9 @@ export default function Header() {
           <a href="#shop" className="text-white hover:text-gray-300">
             Home
           </a>
-          <a href="#shop" className="text-white hover:text-gray-300">
+          <Link href="/shop" className="text-white hover:text-gray-300">
             Shop
-          </a>
+          </Link>
           <a href="#docs" className="text-white hover:text-gray-300">
             Docs
           </a>

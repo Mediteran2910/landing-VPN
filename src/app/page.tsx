@@ -1,6 +1,7 @@
 import LottieAnimation from "@/components/LottieAnimation";
 import SubscribeForm from "@/components/SubscribeForm";
 import Routers from "@/components/Router";
+import MilestoneSection from "@/components/MilestoneSection";
 import {
   HandCoins,
   MapPinHouse,
@@ -332,6 +333,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <MilestoneSection />
       </main>
     </>
   );
