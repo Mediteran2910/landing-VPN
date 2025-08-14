@@ -100,9 +100,7 @@ export default function MilestoneSection() {
 
                     <div className="w-full md:w-3/5 flex items-center justify-center h-full">
                       <div
-                        className={`w-full max-w-[500px] aspect-square flex items-center justify-center bg-gradient-to-br ${getColorClasses(
-                          item.color,
-                          "bg"
+                        className={`w-full max-w-[500px] aspect-square flex items-center justify-center bg-[linear-gradient(120deg,#121212_35%,#262626_80%,#242424_100%)]
                         )} rounded-2xl border border-gray-700`}
                       >
                         <LottieAnimation
