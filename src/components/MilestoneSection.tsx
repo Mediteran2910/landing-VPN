@@ -35,36 +35,6 @@ export default function MilestoneSection() {
     },
   ];
 
-  const getColorClasses = (color: string, variant = "default") => {
-    const colors = {
-      blue: {
-        bg: "from-blue-900/30 to-blue-800/20",
-        icon: "from-blue-500 to-blue-600",
-        badge: "bg-blue-600 text-white",
-        accent: "text-blue-400",
-      },
-      purple: {
-        bg: "from-purple-900/30 to-purple-800/20",
-        icon: "from-purple-500 to-purple-600",
-        badge: "bg-purple-600 text-white",
-        accent: "text-purple-400",
-      },
-      orange: {
-        bg: "from-orange-900/30 to-orange-800/20",
-        icon: "from-orange-500 to-orange-600",
-        badge: "bg-orange-600 text-white",
-        accent: "text-orange-400",
-      },
-      green: {
-        bg: "from-green-900/30 to-green-800/20",
-        icon: "from-green-500 to-green-600",
-        badge: "bg-green-600 text-white",
-        accent: "text-green-400",
-      },
-    };
-    return colors[color]?.[variant] || colors.blue[variant];
-  };
-
   return (
     <section className="relative z-20 text-white bg-black">
       <article className="w-full py-20 bg-gradient-to-r from-[#0D0D0D] via-[#171717] to-[#0D0D0D]">
