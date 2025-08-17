@@ -2,6 +2,7 @@ import LottieAnimation from "@/components/LottieAnimation";
 import SubscribeForm from "@/components/SubscribeForm";
 import Routers from "@/components/Router";
 import MilestoneSection from "@/components/MilestoneSection";
+import AnimatedFeatures from "../../AnimatedFetures";
 import {
   HandCoins,
   MapPinHouse,
@@ -61,113 +62,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        <section className="relative z-20 text-white bg-black">
-          <article className="scroll-mt-20 w-full py-20 flex flex-col md:flex-row md:items-stretch gap-10 bg-gradient-to-r from-[#0D0D0D] via-[#171717] to-[#0D0D0D]">
-            <div className="max-w-[95vw] lg:max-w-[65vw] mx-auto flex flex-col md:flex-row gap-10 items-stretch w-full">
-              <div className="w-full md:w-2/5 text-left flex flex-col justify-center">
-                <h2
-                  id="one-time-payment"
-                  className="text-4xl md:text-6xl lg:text-7xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-gray-200 to-gray-500 px-1"
-                >
-                  One-Time Payment
-                </h2>
-                <hr className="w-24 h-1 bg-gray-600 my-4 rounded-full" />
-                <ul className="custom-list-style space-y-2 text-gray-300 text-base md:text-lg">
-                  <li>No subscriptions, no monthly bills.</li>
-                  <li>A single purchase for a lifetime of access.</li>
-                  <li>Secure your internet without recurring costs.</li>
-                </ul>
-              </div>
-              <div className="w-full md:w-3/5 flex items-center justify-center h-full">
-                <div className="w-full max-w-[500px] aspect-square flex items-center justify-center">
-                  <LottieAnimation animation="payment.lottie" speed={0.8} />
-                </div>
-              </div>
-            </div>
-          </article>
-          <article className="w-full py-20 flex flex-col md:flex-row-reverse md:items-stretch gap-10 bg-gradient-to-r from-[#0D0D0D] via-[#171717] to-[#0D0D0D]">
-            <div className="max-w-[95vw] lg:max-w-[65vw] mx-auto flex flex-col md:flex-row-reverse gap-10 items-stretch w-full">
-              <div className="w-full md:w-2/5 text-left flex flex-col justify-center">
-                <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-gray-200 to-gray-500 px-1">
-                  Router Protection
-                </h2>
-                <hr className="w-24 h-1 bg-gray-600 my-4 rounded-full" />
-                <ul className="custom-list-style space-y-2 text-gray-300 text-base md:text-lg">
-                  <li>Protects your entire network, not just one device.</li>
-                  <li>No software to install on individual devices.</li>
-                  <li>A simple and reliable hardware solution.</li>
-                </ul>
-              </div>
-              <div className="w-full md:w-3/5 flex items-center justify-center h-full">
-                <div className="w-full max-w-[500px] aspect-square flex items-center justify-center">
-                  <LottieAnimation animation="router.lottie" speed={0.25} />
-                </div>
-              </div>
-            </div>
-          </article>
-          <article className="w-full py-20 flex flex-col md:flex-row md:items-stretch gap-10 bg-gradient-to-r from-[#0D0D0D] via-[#171717] to-[#0D0D0D]">
-            <div className="max-w-[95vw] lg:max-w-[65vw] mx-auto flex flex-col md:flex-row gap-10 items-stretch w-full">
-              <div className="w-full md:w-2/5 text-left flex flex-col justify-center">
-                <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-gray-200 to-gray-500 px-1">
-                  Plug & Play Simplicity
-                </h2>
-                <hr className="w-24 h-1 bg-gray-600 my-4 rounded-full" />
-                <ul className="custom-list-style space-y-2 text-gray-300 text-base md:text-lg">
-                  <li>Instantly protected with zero configuration.</li>
-                  <li>Easy to set up in just a few minutes.</li>
-                  <li>Enjoy security without the technical hassle.</li>
-                </ul>
-              </div>
-              <div className="w-full md:w-3/5 flex items-center justify-center h-full">
-                <div className="w-full max-w-[500px] aspect-square flex items-center justify-center">
-                  <LottieAnimation animation="p-p-new.lottie" speed={2} />
-                </div>
-              </div>
-            </div>
-          </article>
-          <article className="w-full py-20 flex flex-col md:flex-row-reverse md:items-stretch gap-10 bg-gradient-to-r from-[#0D0D0D] via-[#171717] to-[#0D0D0D]">
-            <div className="max-w-[95vw] lg:max-w-[65vw] mx-auto flex flex-col md:flex-row-reverse gap-10 items-stretch w-full">
-              <div className="w-full md:w-2/5 text-left flex flex-col justify-center">
-                <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-gray-200 to-gray-500 px-1">
-                  Works Everywhere
-                </h2>
-                <hr className="w-24 h-1 bg-gray-600 my-4 rounded-full" />
-                <ul className="custom-list-style space-y-2 text-gray-300 text-base md:text-lg">
-                  <li>Bypass censorship and geo-restrictions.</li>
-                  <li>Access content as if you were home.</li>
-                  <li>Ultimate tool for internet freedom abroad.</li>
-                </ul>
-              </div>
-              <div className="w-full md:w-3/5 flex items-center justify-center h-full">
-                <div className="w-full max-w-[500px] aspect-square flex items-center justify-center">
-                  <LottieAnimation animation="globe.lottie" />
-                </div>
-              </div>
-            </div>
-          </article>
-          <article className="w-full py-20 flex flex-col md:flex-row md:items-stretch gap-10 bg-gradient-to-r from-[#0D0D0D] via-[#171717] to-[#0D0D0D]">
-            <div className="max-w-[95vw] lg:max-w-[65vw] mx-auto flex flex-col md:flex-row gap-10 items-stretch w-full">
-              <div className="w-full md:w-2/5 text-left flex flex-col justify-center">
-                <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-gray-200 to-gray-500 px-1">
-                  Residential IP
-                </h2>
-                <hr className="w-24 h-1 bg-gray-600 my-4 rounded-full" />
-                <ul className="custom-list-style space-y-2 text-gray-300 text-base md:text-lg">
-                  <li>Access to your Home IP from everywhere.</li>
-                  <li>Avoid detection and online flagging.</li>
-                  <li>Enjoy unblocked access to online services.</li>
-                </ul>
-              </div>
-              <div className="w-full md:w-3/5 flex items-center justify-center h-full">
-                <div className="w-full max-w-[500px] aspect-square flex items-center justify-center">
-                  <LottieAnimation animation="home-ip.lottie" />
-                </div>
-              </div>
-            </div>
-          </article>
-        </section>
-
+        <AnimatedFeatures />
         <article
           id="comparison"
           className="w-full py-16 md:py-20 bg-gradient-to-r from-[#F5F5F5] 44% via-[#BEBEBE] 50% to-[#F5F5F5] 56%"
