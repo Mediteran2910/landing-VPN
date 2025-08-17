@@ -2,7 +2,7 @@ import LottieAnimation from "@/components/LottieAnimation";
 import SubscribeForm from "@/components/SubscribeForm";
 import Routers from "@/components/Router";
 import MilestoneSection from "@/components/MilestoneSection";
-import AnimatedFeatures from "../../AnimatedFetures";
+import Features from "../../Features";
 import {
   HandCoins,
   MapPinHouse,
@@ -62,7 +62,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <AnimatedFeatures />
+        <Features />
         <article
           id="comparison"
           className="w-full py-16 md:py-20 bg-gradient-to-r from-[#F5F5F5] 44% via-[#BEBEBE] 50% to-[#F5F5F5] 56%"
