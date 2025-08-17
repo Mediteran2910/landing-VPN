@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const AnimatedFeatures = () => {
+export default function Features() {
   const features = [
     {
       id: "one-time-payment",
@@ -117,6 +117,4 @@ const AnimatedFeatures = () => {
       ))}
     </section>
   );
-};
-
-export default AnimatedFeatures;
+}
