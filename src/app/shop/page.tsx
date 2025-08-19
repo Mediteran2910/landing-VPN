@@ -1,7 +1,4 @@
 import Routers from "@/components/Router";
-import LottieAnimation from "@/components/LottieAnimation";
-import SubscribeForm from "@/components/SubscribeForm";
-import { h1 } from "framer-motion/client";
 import Kickastarter from "@/components/Kickstarter";
 
 export default function ShopPage() {

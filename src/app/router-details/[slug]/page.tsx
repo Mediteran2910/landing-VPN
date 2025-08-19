@@ -32,7 +32,7 @@ export default function RouterDetailsPage() {
     setCurrent((prev) => (prev - 1 + images.length) % images.length);
 
   return (
-    <main className="w-[95vw] md:w-[70vw] min-h-screen text-gray-200 px-4 md:px-20 py-12 flex flex-col gap-10 justify-self-center">
+    <main className="w-[95vw] md:w-[70vw] min-h-screen text-gray-200 px-4 md:px-20 py-12 flex flex-col gap-10 justify-self-center bg-transprent">
       <section className="md:flex md:gap-10">
         <div className="md:flex-1 flex flex-col items-center mb-6 md:mb-0">
           <div className="relative w-full md:w-[400px] h-[300px] md:h-[400px] overflow-hidden rounded-lg border border-gray-700">

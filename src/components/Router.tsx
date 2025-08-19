@@ -59,13 +59,13 @@ export default function Routers({
           ))}
           <button
             onClick={prevImage}
-            className="cursor-pointer absolute left-2 top-1/2 transform -translate-y-1/2 text-white bg-black/50 p-2 rounded hover:bg-black/70 z-20"
+            className="cursor-pointer absolute left-2 top-1/2 transform -translate-y-1/2 text-white bg-black/50 p-2 rounded hover:bg-black/70 z-10"
           >
             ◀
           </button>
           <button
             onClick={nextImage}
-            className="cursor-pointer absolute right-2 top-1/2 transform -translate-y-1/2 text-white bg-black/50 p-2 rounded hover:bg-black/70 z-20"
+            className="cursor-pointer absolute right-2 top-1/2 transform -translate-y-1/2 text-white bg-black/50 p-2 rounded hover:bg-black/70 z-10"
           >
             ▶
           </button>

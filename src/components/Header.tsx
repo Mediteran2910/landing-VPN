@@ -6,7 +6,6 @@ export default function Header() {
   return (
     <header className="w-full relative z-20 border-b border-gray-600 bg-gradient-to-r from-[#0D0D0D] via-[#171717] to-[#0D0D0D]">
       <nav className="w-[95%] lg:w-[70%] mx-auto flex items-center justify-between py-4">
-        {/* Logo */}
         <div className="flex items-center">
           <Image
             src="/your-logo.svg"
@@ -36,7 +35,7 @@ export default function Header() {
             Docs
           </Link>
           <Link
-            href="/howitworks"
+            href="/how-it-works"
             className="text-white hover:text-gray-300 transition-colors"
           >
             How it works
@@ -48,7 +47,6 @@ export default function Header() {
             Contact
           </Link>
 
-          {/* Dashboard button with cool hover */}
           <Link
             href="/dashboard"
             className="relative text-white border border-white/40 rounded-lg px-5 py-2 transition-all duration-300
@@ -59,7 +57,6 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* Mobile Nav */}
         <div className="lg:hidden">
           <MobileNav />
         </div>

@@ -1,78 +1,48 @@
 "use client";
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
 
 export default function MobileNav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const links = [
+    { href: "/", label: "Home" },
+    { href: "/shop", label: "Shop" },
+    { href: "/docs", label: "Docs" },
+    { href: "/how-it-works", label: "How it works" },
+    { href: "/contact", label: "Contact" },
+  ];
+
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? "hidden" : "";
+  }, [isMenuOpen]);
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <>
+    <div className="lg:hidden relative z-50">
       <button
         onClick={toggleMenu}
-        className="text-white lg:hidden z-50 focus:outline-none"
-        aria-label="Toggle menu"
-        aria-expanded={isMenuOpen}
+        className="p-2 focus:outline-none text-white fixed top-4 right-4 z-[10000]"
+        aria-label={isMenuOpen ? "Close menu" : "Open menu"}
       >
-        <svg
-          className="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M4 6h16M4 12h16M4 18h16"
-          ></path>
-        </svg>
+        {isMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
       </button>
-      <div
-        className={`fixed top-0 left-0 w-full h-full bg-black bg-opacity-95 text-white transform transition-transform duration-300 ease-in-out ${
-          isMenuOpen ? "translate-x-0" : "-translate-x-full"
-        } lg:hidden flex flex-col items-center justify-center space-y-8 z-40`}
-      >
-        <a
-          onClick={toggleMenu}
-          href="#shop"
-          className="text-2xl hover:text-gray-300"
-        >
-          Home
-        </a>
-        <a
-          onClick={toggleMenu}
-          href="#shop"
-          className="text-2xl hover:text-gray-300"
-        >
-          Shop
-        </a>
-        <a
-          onClick={toggleMenu}
-          href="#docs"
-          className="text-2xl hover:text-gray-300"
-        >
-          Docs
-        </a>
-        <a
-          onClick={toggleMenu}
-          href="#howitworks"
-          className="text-2xl hover:text-gray-300"
-        >
-          How it works
-        </a>
-        <a
-          onClick={toggleMenu}
-          href="#contact"
-          className="text-2xl hover:text-gray-300"
-        >
-          Contact
-        </a>
-      </div>
-    </>
+
+      {isMenuOpen && (
+        <div className="fixed inset-0 bg-[#171717] text-gray-300 flex flex-col items-center justify-center space-y-10 z-[9999]">
+          {links.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={toggleMenu}
+              className="text-2xl font-semibold hover:text-gray-300 transition-colors duration-200"
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
   );
 }

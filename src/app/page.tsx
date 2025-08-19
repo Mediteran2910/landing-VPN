@@ -20,7 +20,7 @@ export default function Home() {
             <source src="https://video-previews.elements.envatousercontent.com/a236a9dc-6c03-49e7-a481-e6c9dd464a62/watermarked_preview/watermarked_preview.mp4" />
           </video>
           <div className="absolute inset-0 bg-black/80 z-10"></div>
-          <div className="relative z-20 max-w-4xl">
+          <div className="relative z-10 max-w-4xl">
             <h1 className="text-4xl md:text-6xl font-bold mb-4">
               VPN SOLUTION
             </h1>
