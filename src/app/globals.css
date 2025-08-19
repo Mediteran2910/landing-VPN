@@ -47,7 +47,7 @@ html {
 }
 
 body {
-  background: var(--background);
+  background: linear-gradient(to right, #0d0d0d, #171717, #0d0d0d);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -84,6 +84,12 @@ body {
   padding-left: 1.5rem;
 }
 
+.custom-list-style-dark li {
+  list-style: none;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
 .custom-list-style li::before {
   content: "";
   position: absolute;
@@ -92,6 +98,18 @@ body {
   width: 0.8em;
   height: 0.8em;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23D1D5DB'%3E%3Cpath d='M12 2L2 12l10 10 10-10L12 2z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.custom-list-style-dark li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.4rem;
+  width: 0.8em;
+  height: 0.8em;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23474747'%3E%3Cpath d='M12 2L2 12l10 10 10-10L12 2z'/%3E%3C/svg%3E");
   background-size: contain;
   background-repeat: no-repeat;
 }

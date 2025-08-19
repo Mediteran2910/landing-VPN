@@ -1,15 +1,10 @@
-import LottieAnimation from "@/components/LottieAnimation";
-import SubscribeForm from "@/components/SubscribeForm";
 import Routers from "@/components/Router";
 import MilestoneSection from "@/components/MilestoneSection";
-import Features from "../../Features";
-import {
-  HandCoins,
-  MapPinHouse,
-  GlobeLock,
-  Shield,
-  Wrench,
-} from "lucide-react";
+import Features from "../components/Features";
+import Comparison from "@/components/Comparison";
+import Kickastarter from "@/components/Kickstarter";
+import Link from "next/link";
+
 export default function Home() {
   return (
     <>
@@ -32,7 +27,7 @@ export default function Home() {
             <p className="text-lg mb-8 text-gray-400">
               Experience true online freedom with our revolutionary VPN. Our
               service is a{" "}
-              <a href="#onetimepayment" className="anchors_hero">
+              <a href="#one-time-payment" className="anchors_hero">
                 one-time payment
               </a>
               , offering a secure{" "}
@@ -40,15 +35,20 @@ export default function Home() {
                 router
               </a>{" "}
               that is completely{" "}
-              <a href="#plugandplay" className="anchors_hero">
+              <a href="#plug-and-play" className="anchors_hero">
                 plug and play
               </a>
               , and{" "}
-              <a href="#workseverywhere" className="anchors_hero">
+              <a href="#works-everywhere" className="anchors_hero">
                 works everywhere
               </a>
-              . Protect your entire network with ease.
+              . Protect your entire network with ease and access your{" "}
+              <a href="#residential-ip" className="anchors_hero">
+                Home IP
+              </a>{" "}
+              from anywhere in the world.
             </p>
+
             <div className="flex flex-col sm:flex-row justify-center gap-6">
               <a
                 href="#one-time-payment"
@@ -56,111 +56,22 @@ export default function Home() {
               >
                 Why Us?
               </a>
-              <button className="cursor-pointer bg-white/10 border border-white/30 text-white hover:bg-white/80 hover:text-black transition-all duration-300 ease-in-out py-3 px-7 rounded-xl shadow-lg hover:scale-105 text-lg">
+              <Link
+                href="/shop"
+                className="cursor-pointer bg-white/10 border border-white/30 text-white hover:bg-white/80 hover:text-black transition-all duration-300 ease-in-out py-3 px-7 rounded-xl shadow-lg hover:scale-105 text-lg"
+              >
                 Shop Now
-              </button>
+              </Link>
             </div>
           </div>
         </section>
         <Features />
-        <article
-          id="comparison"
-          className="w-full py-16 md:py-20 bg-gradient-to-r from-[#F5F5F5] 44% via-[#BEBEBE] 50% to-[#F5F5F5] 56%"
-        >
-          <div className="max-w-[95vw] lg:max-w-[65vw] mx-auto text-center px-4 sm:px-6 md:px-12 text-black">
-            <h2
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold bg-clip-text text-transparent 
-        bg-gradient-to-r from-gray-900 via-gray-700 to-gray-500 px-1 mb-12 sm:mb-16 tracking-tight"
-            >
-              We are better.
-            </h2>
-            <div className="flex mb-10 md:mb-12 font-bold tracking-wide">
-              <div
-                className="w-2/5 text-right pr-2 sm:pr-4 md:pr-6 text-[#2c2c2c] 
-                  text-l sm:text-base md:text-xl lg:text-2xl"
-              >
-                Our Solution
-              </div>
-              <div className="w-1/5 text-center" />
-              <div
-                className="w-2/5 text-left pl-2 sm:pl-4 md:pl-6 text-[#2c2c2c] 
-                  text-l sm:text-base md:text-xl lg:text-2xl"
-              >
-                Traditional VPNs
-              </div>
-            </div>
-
-            <div className="space-y-0">
-              {" "}
-              {[
-                {
-                  left: "One-time payment for a lifetime of access, no subscriptions.",
-                  icon: HandCoins,
-                  right: "Endless subscription fees to maintain service.",
-                  label: "Pricing",
-                },
-                {
-                  left: "Dedicated residential IP that bypasses blocks.",
-                  icon: MapPinHouse,
-                  right:
-                    "Shared, low-reputation IPs from anonymous data centers.",
-                  label: "IP Address",
-                },
-                {
-                  left: "Hardware-based protection for your entire network.",
-                  icon: Shield,
-                  right:
-                    "Requires software on every device and leaves others unprotected.",
-                  label: "Security",
-                },
-                {
-                  left: "Your home IP works everywhere, bypassing all geo-blocks.",
-                  icon: GlobeLock,
-                  right:
-                    "Easily detected and blocked by most streaming and financial sites.",
-                  label: "Geo-Blocking",
-                },
-                {
-                  left: "True plug-and-play simplicity with zero configuration.",
-                  icon: Wrench,
-                  right: "Complicated configuration on multiple devices.",
-                  label: "Setup",
-                },
-              ].map((item, idx, arr) => (
-                <div key={idx}>
-                  <div className="flex flex-wrap items-center text-left py-6 md:py-8">
-                    <div className="w-2/5 pr-2 sm:pr-4 md:pr-6 text-right">
-                      <p className="text-sm sm:text-base md:text-lg text-black font-semibold leading-relaxed">
-                        {item.left}
-                      </p>
-                    </div>
-                    <div className="w-1/5 flex flex-col items-center">
-                      <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-r from-gray-900 via-gray-700 to-gray-500">
-                        <item.icon className="h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8 text-white" />
-                      </div>
-                      <span className="text-[10px] sm:text-xs md:text-sm font-medium mt-2 text-gray-600 tracking-wide">
-                        {item.label}
-                      </span>
-                    </div>
-                    <div className="w-2/5 pl-2 sm:pl-4 md:pl-6 text-left">
-                      <p className="text-sm sm:text-base md:text-lg text-gray-700 font-normal leading-relaxed">
-                        {item.right}
-                      </p>
-                    </div>
-                  </div>
-                  {idx !== arr.length - 1 && (
-                    <hr className="border-t border-gray900 opacity-50" />
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </article>
+        <Comparison />
         <section
           id="kickstarter-announcement"
-          className="min-h-screen py-20 flex flex-col items-center justify-center gap-10 bg-gradient-to-r from-[#0D0D0D] 44% via-[#171717] 50% to-[#0D0D0D] 56%"
+          className="min-h-screen py:14 md:py-20 flex flex-col items-center justify-center gap-10 bg-gradient-to-r from-[#0D0D0D] 44% via-[#171717] 50% to-[#0D0D0D] 56%"
         >
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:mb-20 w-[90%] md:w-[65%] mx-auto">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 mt-15 md:mt-0 md:mb-20 w-[90%] md:w-[65%] mx-auto ">
             <Routers
               name="Single Router"
               price="85"
@@ -168,6 +79,7 @@ export default function Home() {
               stock
               sale="120"
               qty={1}
+              ethPorts={3}
             />
             <Routers
               name="Pair Routers"
@@ -176,57 +88,10 @@ export default function Home() {
               stock
               sale="195"
               qty={2}
+              ethPorts={3}
             />
           </div>
-          <div className="flex flex-col md:flex-row justify-center gap-10 w-full max-w-[95vw] lg:max-w-[65vw] mx-auto">
-            <div className="w-full md:w-1/2 text-left text-gray-300 flex flex-col">
-              <h2 className="text-3xl md:text-4xl lg:text-7xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-gray-200 to-gray-500 px-1">
-                Kickstarter Launch — 29.9.2025
-              </h2>
-              <hr className="w-24 h-1 bg-gray-600 my-4 rounded-full" />
-              <div className="space-y-4 text-gray-200 flex-grow">
-                <p className="text-2xl md:text-3xl text-gray-400">
-                  Early Bird Offers — Save up to 35%!
-                </p>
-                <ul className="space-y-2 text-lg md:text-xl">
-                  <li>
-                    <span className="font-semibold">Pair of devices:</span>{" "}
-                    <span className="text-green-300 font-bold">€150</span>{" "}
-                    <span className="line-through text-gray-500">€195</span>{" "}
-                    <span className="text-green-400">(Save €45)</span>
-                  </li>
-                  <li>
-                    <span className="font-semibold">Single device:</span>{" "}
-                    <span className="text-green-300 font-bold">€85</span>{" "}
-                    <span className="line-through text-gray-500">€120</span>{" "}
-                    <span className="text-green-400">(Save €35)</span>
-                  </li>
-                </ul>
-                <ul className="custom-list-style">
-                  <li>Lifetime warranty on the device</li>
-                  <li>Lifetime priority support</li>
-                  <li>Early shipping before public release</li>
-                  <li>Exclusive backer updates & community access</li>
-                </ul>
-              </div>
-            </div>
-            <div className="w-full md:w-1/2 flex flex-col border border-gray-400">
-              <div className="flex-grow flex items-center justify-center">
-                <LottieAnimation animation="email.lottie" />
-              </div>
-              <div className="w-full p-4 rounded-lg shadow-lg mt-6">
-                <h3 className="text-xl mb-1 text-gray-200 font-bold">
-                  Join Our Early Access Newsletter
-                </h3>
-                <p className="text-gray-400 mb-4">
-                  Be the first to know about launches, exclusive discounts, and
-                  behind-the-scenes updates.
-                </p>
-
-                <SubscribeForm />
-              </div>
-            </div>
-          </div>
+          <Kickastarter />
         </section>
         <MilestoneSection />
       </main>

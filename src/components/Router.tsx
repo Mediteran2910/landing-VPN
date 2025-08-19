@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
+import Link from "next/link";
 import {
   Wifi,
   Settings,
@@ -8,6 +9,7 @@ import {
   Router,
   EthernetPort,
   ShoppingBasket,
+  CircleChevronRight,
 } from "lucide-react";
 type Props = {
   price: "85" | "150";
@@ -16,9 +18,20 @@ type Props = {
   name: string;
   stock: boolean;
   qty: 1 | 2 | 4;
+  isShop?: boolean;
+  ethPorts: number;
 };
 
-export default function Routers({ price, alt, sale, name, stock, qty }: Props) {
+export default function Routers({
+  price,
+  alt,
+  sale,
+  name,
+  stock,
+  qty,
+  isShop,
+  ethPorts,
+}: Props) {
   const images = ["/1-router.webp", "/2-router.webp", "/3-router.webp"];
   const [current, setCurrent] = useState(0);
 
@@ -96,7 +109,7 @@ export default function Routers({ price, alt, sale, name, stock, qty }: Props) {
           <EthernetPort className="w-5 h-5 text-gray-400" />
           <span className="text-gray-400">
             <span className="font-semibold text-gray-200">Ethernet Ports:</span>{" "}
-            2
+            {ethPorts}
           </span>
         </li>
         <hr className="custom-hr-product-card" />
@@ -129,17 +142,28 @@ export default function Routers({ price, alt, sale, name, stock, qty }: Props) {
             </span>
           )}
         </p>
-        <a
-          href="https://www.kickstarter.com/projects/your-project-id"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="cursor-pointer px-4 py-2 w-1/3 text-gray-800 font-bold 
-             bg-gray-100 border border-transparent rounded-lg 
-             hover:bg-transparent hover:border-gray-200 hover:text-gray-200 
-             transition duration-300 ease-in-out text-center"
-        >
-          Buy
-        </a>
+        <div className="flex flex-wrap items-center justify-end gap-3 w-full">
+          <Link
+            href={`/router-details/opal-${qty === 1 ? "single" : "pair"}`}
+            className="group px-3 py-2 border border-gray-400/50 rounded-lg flex-shrink-0 
+    transition-colors duration-300 ease-in-out
+    hover:bg-white/10 hover:border-white hover:shadow-md"
+          >
+            <CircleChevronRight className="text-gray-300 transition-colors duration-300 group-hover:text-white" />
+          </Link>
+
+          <a
+            href="https://www.kickstarter.com/projects/your-project-id"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cursor-pointer px-6 py-2 md:px-12 text-gray-800 font-bold 
+      bg-gray-100 border border-transparent rounded-lg 
+      hover:bg-transparent hover:border-gray-200 hover:text-gray-200 
+      transition duration-300 ease-in-out text-center flex-shrink-0"
+          >
+            Buy
+          </a>
+        </div>
       </div>
     </div>
   );

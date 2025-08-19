@@ -67,13 +67,6 @@ export default function MobileNav() {
         </a>
         <a
           onClick={toggleMenu}
-          href="#pricing"
-          className="text-2xl hover:text-gray-300"
-        >
-          Pricing
-        </a>
-        <a
-          onClick={toggleMenu}
           href="#contact"
           className="text-2xl hover:text-gray-300"
         >
