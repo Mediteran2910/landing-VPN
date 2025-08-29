@@ -1,54 +1,96 @@
-import LottieAnimation from "./LottieAnimation";
-import SubscribeForm from "./SubscribeForm";
+import { Check } from "lucide-react";
 
 export default function Kickastarter() {
   return (
-    <div className="flex flex-col md:flex-row justify-center gap-10 w-full max-w-[95vw] lg:max-w-[65vw] mx-auto">
-      <div className="w-full md:w-1/2 text-left text-gray-300 flex flex-col">
-        <h2 className="text-3xl md:text-4xl lg:text-7xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-gray-200 to-gray-500 px-1">
-          Kickstarter Launch — 29.9.2025
-        </h2>
-        <hr className="w-24 h-1 bg-gray-600 my-4 rounded-full" />
-        <div className="space-y-4 text-gray-200 flex-grow">
-          <p className="text-2xl md:text-3xl text-gray-400">
-            Early Bird Offers — Save up to 35%!
-          </p>
-          <ul className="space-y-2 text-lg md:text-xl">
-            <li>
-              <span className="font-semibold">Pair of devices:</span>{" "}
-              <span className="text-green-300 font-bold">€150</span>{" "}
-              <span className="line-through text-gray-500">€195</span>{" "}
-              <span className="text-green-400">(Save €45)</span>
-            </li>
-            <li>
-              <span className="font-semibold">Single device:</span>{" "}
-              <span className="text-green-300 font-bold">€85</span>{" "}
-              <span className="line-through text-gray-500">€120</span>{" "}
-              <span className="text-green-400">(Save €35)</span>
-            </li>
-          </ul>
-          <ul className="custom-list-style">
-            <li>Lifetime warranty on the device</li>
-            <li>Lifetime priority support</li>
-            <li>Early shipping before public release</li>
-            <li>Exclusive backer updates & community access</li>
-          </ul>
-        </div>
-      </div>
-      <div className="w-full md:w-1/2 flex flex-col bg-[#171717] rounded-xl">
-        <div className="flex-grow flex items-center justify-center">
-          <LottieAnimation animation="email.lottie" />
-        </div>
-        <div className="w-full p-4 rounded-lg shadow-lg mt-6">
-          <h3 className="text-xl mb-1 text-gray-200 font-bold">
-            Join Our Early Access Newsletter
+    <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '32px'}}>
+      <div className="card" style={{padding: '32px'}}>
+        <div style={{marginBottom: '24px'}}>
+          <div style={{display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px'}}>
+            <div style={{
+              width: '8px',
+              height: '8px',
+              backgroundColor: 'var(--success)',
+              borderRadius: '50%'
+            }}></div>
+            <span className="text-small text-muted">Coming Soon</span>
+          </div>
+          <h3 className="heading-3" style={{marginBottom: '8px'}}>
+            Kickstarter Launch
           </h3>
-          <p className="text-gray-400 mb-4">
-            Be the first to know about launches, exclusive discounts, and
-            behind-the-scenes updates.
+          <p className="text-muted">September 29, 2025</p>
+        </div>
+        
+        <div style={{marginBottom: '24px'}}>
+          <h4 className="text-medium" style={{marginBottom: '16px'}}>Early Bird Pricing</h4>
+          
+          <div style={{display: 'flex', flexDirection: 'column', gap: '12px'}}>
+            <div style={{
+              padding: '16px',
+              border: '1px solid var(--border)',
+              borderRadius: '8px'
+            }}>
+              <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+                <span className="text-small">Single Router</span>
+                <div style={{textAlign: 'right'}}>
+                  <span className="price">€85</span>
+                  <span className="text-small text-muted" style={{textDecoration: 'line-through', marginLeft: '8px'}}>€120</span>
+                </div>
+              </div>
+              <div className="text-small" style={{color: 'var(--success)', marginTop: '4px'}}>Save €35 (29% off)</div>
+            </div>
+            
+            <div style={{
+              padding: '16px',
+              border: '1px solid var(--border)',
+              borderRadius: '8px'
+            }}>
+              <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+                <span className="text-small">Pair of Routers</span>
+                <div style={{textAlign: 'right'}}>
+                  <span className="price">€150</span>
+                  <span className="text-small text-muted" style={{textDecoration: 'line-through', marginLeft: '8px'}}>€195</span>
+                </div>
+              </div>
+              <div className="text-small" style={{color: 'var(--success)', marginTop: '4px'}}>Save €45 (23% off)</div>
+            </div>
+          </div>
+        </div>
+        
+        <ul className="feature-list">
+          <li>Lifetime warranty & support included</li>
+          <li>Priority shipping before retail release</li>
+          <li>Exclusive backer community access</li>
+          <li>24/7 enterprise-grade support</li>
+        </ul>
+      </div>
+      
+      <div className="card" style={{padding: '32px'}}>
+        <div style={{marginBottom: '24px'}}>
+          <h3 className="heading-3" style={{marginBottom: '16px'}}>
+            Get Notified
+          </h3>
+          <p className="text-muted">
+            Join our mailing list for updates on launch dates, pricing, and exclusive early access offers.
           </p>
-
-          <SubscribeForm />
+        </div>
+        
+        <div style={{marginBottom: '24px'}}>
+          <div style={{display: 'flex', gap: '8px'}}>
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="input"
+              style={{flex: 1}}
+            />
+            <button className="btn btn-primary">
+              Subscribe
+            </button>
+          </div>
+          
+          <div style={{display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px'}}>
+            <Check size={16} color="var(--success)" />
+            <span className="text-small text-muted">Your data is secure and private</span>
+          </div>
         </div>
       </div>
     </div>

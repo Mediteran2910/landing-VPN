@@ -6,27 +6,29 @@ export default function SubscribeForm() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    alert(`Thanks for subscribing: ${email}`);
+    // In a real app, this would submit to your email service
+    alert(`Thanks for subscribing! We'll notify ${email} about our enterprise launch.`);
     setEmail("");
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+    <form onSubmit={handleSubmit} className="space-y-4">
       <input
         type="email"
         required
-        placeholder="Enter your email"
+        placeholder="enterprise@company.com"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        className="w-full px-5 py-3 rounded-xl border border-gray-600 text-gray-200 placeholder-gray-400 focus:outline-none focus:border-gray-400 transition"
+        className="form-input w-full"
       />
       <button
         type="submit"
-        className="w-full py-3 bg-gray-200 text-gray-900 font-semibold rounded-lg border border-transparent rounded-lg 
-             hover:bg-transparent hover:border-gray-200 hover:text-gray-200 
-             transition duration-300 ease-in-out text-center cursor-pointer"
+        className="btn-primary w-full flex items-center justify-center gap-2"
       >
-        Join
+        <span>Get Early Access</span>
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
       </button>
     </form>
   );

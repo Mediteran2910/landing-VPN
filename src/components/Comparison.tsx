@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   HandCoins,
   MapPinHouse,
@@ -10,92 +11,121 @@ import {
 
 export default function Comparison() {
   return (
-    <article
-      id="comparison"
-      className="w-full py-16 md:py-20 bg-gradient-to-r from-[#F5F5F5] 44% via-[#BEBEBE] 50% to-[#F5F5F5] 56%"
-    >
-      <div className="max-w-[95vw] lg:max-w-[70vw] mx-auto text-center px-4 sm:px-6 md:px-12 text-black">
-        <h2
-          className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold bg-clip-text text-transparent 
-            bg-gradient-to-r from-gray-900 via-gray-700 to-gray-500 px-1 mb-4 tracking-tight hover:from-gray-800 hover:via-gray-600 hover:to-gray-400 transition-all duration-300"
-        >
-          We are better.
-        </h2>
-        <p className="text-lg text-gray-700 hover:text-gray-900 transition-colors duration-300">
-          Why we are better than traditional VPN solutions? It's simple.
-        </p>
+    <section className="section">
+      <div className="container">
+        <div style={{textAlign: 'center', marginBottom: '80px'}}>
+          <h2 className="heading-2" style={{marginBottom: '16px'}}>
+            Why choose hardware over software
+          </h2>
+          <p className="text-large text-muted">
+            Compare our solution with traditional VPN software.
+          </p>
+        </div>
 
-        <div className="grid gap-6 mt-10">
+        <div style={{display: 'grid', gap: '24px'}}>
           {[
             {
-              left: "One-time payment for a lifetime of access, no subscriptions.",
+              left: "One-time payment for lifetime access",
               icon: HandCoins,
-              right: "Endless subscription fees to maintain service.",
+              right: "Monthly subscription fees forever",
               label: "Pricing",
             },
             {
-              left: "Dedicated residential IP that bypasses blocks.",
+              left: "Dedicated residential IP address",
               icon: MapPinHouse,
-              right: "Shared, low-reputation IPs from anonymous data centers.",
-              label: "IP Address",
+              right: "Shared datacenter IP addresses",
+              label: "IP Quality",
             },
             {
-              left: "Hardware-based protection for your entire network.",
+              left: "Hardware protection for entire network",
               icon: Shield,
-              right:
-                "Requires software on every device and leaves others unprotected.",
-              label: "Security",
+              right: "Software required on each device",
+              label: "Coverage",
             },
             {
-              left: "Your home IP works everywhere, bypassing all geo-blocks.",
+              left: "Bypasses all geo-restrictions",
               icon: GlobeLock,
-              right:
-                "Easily detected and blocked by most streaming and financial sites.",
-              label: "Geo-Blocking",
+              right: "Often blocked by streaming services",
+              label: "Reliability",
             },
             {
-              left: "True plug-and-play simplicity with zero configuration.",
+              left: "Plug and play setup in 5 minutes",
               icon: Wrench,
-              right: "Complicated configuration on multiple devices.",
+              right: "Complex configuration required",
               label: "Setup",
             },
           ].map((item, idx) => (
             <div
               key={idx}
-              className="bg-white/10 backdrop-blur-sm shadow-sm rounded-xl p-6 md:p-8 flex flex-col md:flex-row items-center md:items-stretch gap-6 hover:bg-white/20 hover:shadow-lg hover:shadow-gray-400/30 hover:scale-[1.02] transition-all duration-300 ease-in-out group cursor-pointer"
+              className="card"
+              style={{
+                padding: '24px',
+                display: 'grid',
+                gridTemplateColumns: '1fr auto 1fr',
+                gap: '24px',
+                alignItems: 'center'
+              }}
             >
-              <div className="flex items-start gap-2 md:w-2/5 group-hover:transform group-hover:translate-x-1 transition-transform duration-300 ease-in-out">
-                <Check
-                  className="h-6 w-6 text-green-600 shrink-0 mt-1 md:mt-0 group-hover:text-green-500 group-hover:scale-110 transition-all duration-300"
-                  strokeWidth={3}
-                />
-                <p className="text-sm sm:text-base md:text-lg text-black font-semibold leading-relaxed group-hover:text-gray-900 transition-colors duration-300">
-                  {item.left}
-                </p>
+              <div style={{display: 'flex', alignItems: 'center', gap: '12px'}}>
+                <div style={{
+                  width: '20px',
+                  height: '20px',
+                  backgroundColor: 'var(--success)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexShrink: 0
+                }}>
+                  <Check size={12} color="black" strokeWidth={3} />
+                </div>
+                <p className="text-small">{item.left}</p>
               </div>
 
-              <div className="flex flex-col items-center md:w-1/5">
-                <div className="flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-r from-gray-900 via-gray-700 to-gray-500 group-hover:from-gray-800 group-hover:via-gray-600 group-hover:to-gray-400 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-gray-600/50 transition-all duration-300 ease-in-out">
-                  <item.icon className="h-6 w-6 md:h-8 md:w-8 text-white group-hover:scale-110 transition-transform duration-300" />
+              <div style={{textAlign: 'center'}}>
+                <div style={{
+                  width: '40px',
+                  height: '40px',
+                  backgroundColor: 'var(--gray-900)',
+                  borderRadius: '8px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 8px'
+                }}>
+                  <item.icon size={20} color="white" strokeWidth={1.5} />
                 </div>
-                <span className="text-xs md:text-sm font-medium mt-2 text-gray-600 tracking-wide group-hover:text-gray-800 group-hover:font-semibold transition-all duration-300">
+                <span className="text-small text-muted">
                   {item.label}
                 </span>
               </div>
 
-              <div className="flex items-start justify-between gap-2 md:w-2/5 group-hover:transform group-hover:-translate-x-1 transition-transform duration-300 ease-in-out">
-                <p className="text-sm sm:text-base md:text-lg text-gray-700 font-normal leading-relaxed group-hover:text-gray-500 transition-colors duration-300">
-                  {item.right}
-                </p>
-                <X
-                  className="h-6 w-6 text-red-600 shrink-0 group-hover:text-red-500 group-hover:scale-110 group-hover:rotate-90 transition-all duration-300"
-                  strokeWidth={3}
-                />
+              <div style={{display: 'flex', alignItems: 'center', gap: '12px', justifyContent: 'flex-end'}}>
+                <p className="text-small text-muted">{item.right}</p>
+                <div style={{
+                  width: '20px',
+                  height: '20px',
+                  backgroundColor: 'var(--error)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexShrink: 0,
+                  opacity: 0.7
+                }}>
+                  <X size={12} color="white" strokeWidth={3} />
+                </div>
               </div>
             </div>
           ))}
         </div>
+        
+        <div style={{textAlign: 'center', marginTop: '64px'}}>
+          <Link href="/shop" className="btn btn-primary">
+            Get Started
+          </Link>
+        </div>
       </div>
-    </article>
+    </section>
   );
 }

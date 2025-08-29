@@ -1,66 +1,59 @@
-import Image from "next/image";
+"use client";
 import MobileNav from "./MobileNav";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function Header() {
-  return (
-    <header className="w-full relative z-20 border-b border-gray-600 bg-gradient-to-r from-[#0D0D0D] via-[#171717] to-[#0D0D0D]">
-      <nav className="w-[95%] lg:w-[70%] mx-auto flex items-center justify-between py-4">
-        <div className="flex items-center">
-          <Image
-            src="/your-logo.svg"
-            alt="Company Logo"
-            width={100}
-            height={40}
-          />
-        </div>
+  const [isScrolled, setIsScrolled] = useState(false);
 
-        <div className="hidden lg:flex items-center space-x-8">
-          <Link
-            href="/"
-            className="text-white hover:text-gray-300 transition-colors"
-          >
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <header className={`nav ${isScrolled ? 'nav-scrolled' : ''}`}>
+      <div className="nav-content">
+        <Link href="/" className="nav-logo" style={{display: 'flex', alignItems: 'center', gap: '8px'}}>
+          <div style={{
+            width: '32px',
+            height: '32px',
+            background: 'var(--accent)',
+            borderRadius: '6px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}>
+            <span style={{color: 'white', fontWeight: 'bold', fontSize: '18px'}}>🛡</span>
+          </div>
+          SkyRouter
+        </Link>
+
+        <div className="nav-links">
+          <Link href="/" className="nav-link">
             Home
           </Link>
-          <Link
-            href="/shop"
-            className="text-white hover:text-gray-300 transition-colors"
-          >
-            Shop
+          <Link href="/shop" className="nav-link">
+            Products
           </Link>
-          <Link
-            href="/docs"
-            className="text-white hover:text-gray-300 transition-colors"
-          >
-            Docs
-          </Link>
-          <Link
-            href="/how-it-works"
-            className="text-white hover:text-gray-300 transition-colors"
-          >
+          <Link href="/how-it-works" className="nav-link">
             How it works
           </Link>
-          <Link
-            href="/contact"
-            className="text-white hover:text-gray-300 transition-colors"
-          >
+          <Link href="/contact" className="nav-link">
             Contact
           </Link>
-
-          <Link
-            href="/dashboard"
-            className="relative text-white border border-white/40 rounded-lg px-5 py-2 transition-all duration-300
-            hover:border-gray-400 hover:text-gray-100 hover:shadow-[0_0_10px_rgba(255,255,255,0.2)]
-            before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-r before:from-gray-500/20 before:to-gray-700/20 before:opacity-0 before:transition-opacity before:duration-300 hover:before:opacity-100"
-          >
-            Dashboard
+          <Link href="/shop" className="btn btn-primary">
+            PRICING
           </Link>
         </div>
 
-        <div className="lg:hidden">
+        <div className="md:hidden">
           <MobileNav />
         </div>
-      </nav>
+      </div>
     </header>
   );
 }

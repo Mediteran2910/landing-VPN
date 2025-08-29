@@ -7,175 +7,351 @@ import {
   Wifi,
   Waypoints,
   MonitorSmartphone,
+  Shield,
+  Zap,
+  Globe
 } from "lucide-react";
 import Link from "next/link";
 
 export default function HowItWorksPage() {
   const features = [
     {
-      title: "WireGuard",
+      title: "WireGuard Protocol",
       description:
         "Secure, fast, and reliable VPN protocol powering your private network.",
-      icon: <CircuitBoard size={48} />,
+      icon: CircuitBoard,
+      color: "var(--accent)"
     },
     {
-      title: "2 Routers",
+      title: "Dual Router System",
       description:
         "One exit router at home, one travel router with you — fully plug-and-play.",
-      icon: <Router size={48} />,
+      icon: Router,
+      color: "var(--success)"
     },
     {
-      title: "Dashboard",
+      title: "Smart Dashboard",
       description:
         "Easily manage your private network and choose which router is your exit or travel device.",
-      icon: <LayoutDashboard size={48} />,
+      icon: LayoutDashboard,
+      color: "var(--warning)"
     },
   ];
 
   const steps = [
     {
       title: "Place Your Routers",
-      description:
-        "Put the routers in the desired locations in your home or office.",
-      icon: <Router size={48} />,
+      description: "Put the routers in the desired locations in your home or office.",
+      icon: Router,
+      color: "var(--accent)"
     },
     {
       title: "Plug & Connect",
       description: "Plug the routers in and connect them to the internet.",
-      icon: <HousePlug size={48} />,
+      icon: HousePlug,
+      color: "var(--success)"
     },
     {
-      title: "Add Devices to Your Network",
-      description:
-        "Go to the dashboard and add your routers to your private network.",
-      icon: <MonitorSmartphone size={48} />,
+      title: "Add Devices to Network",
+      description: "Go to the dashboard and add your routers to your private network.",
+      icon: MonitorSmartphone,
+      color: "var(--warning)"
     },
     {
-      title: "Choose Exit & Travel Routers",
-      description:
-        "Select which router will be your exit point and which one will be your travel router.",
-      icon: <Waypoints size={48} />,
+      title: "Configure Routing",
+      description: "Select which router will be your exit point and which one will be your travel router.",
+      icon: Waypoints,
+      color: "var(--accent)"
     },
     {
       title: "Connect & Go",
-      description:
-        "Connect your device to the travel router's Wi-Fi. That's it — done in a few clicks, no technical knowledge required.",
-      icon: <Wifi size={48} />,
+      description: "Connect your device to the travel router's Wi-Fi. That's it — done in a few clicks!",
+      icon: Wifi,
+      color: "var(--success)"
     },
   ];
 
   return (
-    <main className="w-[95vw] md:w-[70vw] mx-auto py-12 md:py-20 flex flex-col gap-16 md:gap-24 text-white px-4 md:px-8 bg-transparent">
-      <section className="text-center flex flex-col gap-8">
-        <div className="space-y-4">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-gray-200 to-gray-500 bg-clip-text text-transparent leading-tight">
-            How It Works
+    <div style={{
+      minHeight: '100vh',
+      background: 'var(--background-gradient)',
+      paddingTop: '80px'
+    }}>
+      <div className="container" style={{paddingTop: '80px', paddingBottom: '80px'}}>
+        {/* Hero Section */}
+        <div style={{textAlign: 'center', marginBottom: '120px'}}>
+          <div style={{
+            color: 'var(--accent)',
+            fontSize: '14px',
+            fontWeight: '600',
+            letterSpacing: '0.1em',
+            marginBottom: '24px',
+            textTransform: 'uppercase'
+          }} className="animate-fade-in">
+            SIMPLE & SECURE
+          </div>
+          <h1 style={{
+            fontSize: 'clamp(2.5rem, 6vw, 4rem)',
+            fontWeight: '700',
+            lineHeight: '1.1',
+            marginBottom: '32px',
+            color: 'white'
+          }} className="animate-slide-left">
+            How SkyRouter Works
           </h1>
-          <div className="w-24 h-1 bg-gradient-to-r from-gray-400 to-gray-700 mx-auto rounded-full"></div>
-        </div>
-
-        <p className="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-          Our system uses{" "}
-          <span className="font-semibold text-white">WireGuard</span>,{" "}
-          <span className="font-semibold text-white">two routers</span>, and an
-          intuitive <span className="font-semibold text-white">dashboard</span>{" "}
-          to make private networking incredibly simple. No tech skills required.
-        </p>
-      </section>
-      <section className="flex flex-col gap-12">
-        <div className="text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-200">
-            Core Components
-          </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Three essential components working together seamlessly
+          <p style={{
+            fontSize: '20px',
+            color: 'var(--muted)',
+            maxWidth: '700px',
+            margin: '0 auto',
+            lineHeight: '1.6'
+          }} className="animate-slide-right">
+            Our system uses <span style={{color: 'var(--accent)', fontWeight: '600'}}>WireGuard</span>, 
+            <span style={{color: 'var(--success)', fontWeight: '600'}}> two routers</span>, and an 
+            intuitive <span style={{color: 'var(--warning)', fontWeight: '600'}}>dashboard</span> to 
+            make private networking incredibly simple. No tech skills required.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className="group relative bg-gradient-to-r from-[#0D0D0D] via-[#171717] to-[#0D0D0D] backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-gray-700/50 hover:border-gray-400/50 transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-gray-500/20 cursor-pointer"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-gray-700/5 via-gray-600/5 to-gray-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        {/* Core Components */}
+        <div style={{marginBottom: '120px'}}>
+          <div style={{textAlign: 'center', marginBottom: '80px'}}>
+            <h2 style={{
+              fontSize: 'clamp(2rem, 4vw, 3rem)',
+              fontWeight: '600',
+              color: 'white',
+              marginBottom: '24px'
+            }}>
+              Core Components
+            </h2>
+            <p style={{
+              fontSize: '18px',
+              color: 'var(--muted)',
+              maxWidth: '600px',
+              margin: '0 auto'
+            }}>
+              Three essential components working together seamlessly
+            </p>
+          </div>
 
-              <div className="relative z-10 flex flex-col items-center text-center">
-                {feature.icon && (
-                  <div className="mb-6 p-4 bg-gray-800/30 rounded-xl group-hover:bg-gray-700/50 transition-colors duration-300 group-hover:scale-110 transform">
-                    {feature.icon}
-                  </div>
-                )}
-                <h3 className="text-xl md:text-2xl font-semibold mb-3 group-hover:text-gray-200 transition-colors duration-300">
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            gap: '40px'
+          }}>
+            {features.map((feature, index) => (
+              <div
+                key={index}
+                style={{
+                  background: 'var(--card-bg)',
+                  border: '1px solid var(--card-border)',
+                  borderRadius: '20px',
+                  padding: '40px',
+                  backdropFilter: 'blur(15px)',
+                  textAlign: 'center',
+                  transition: 'all 0.3s ease'
+                }}
+                className="card animate-scale-in"
+              >
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: `linear-gradient(135deg, ${feature.color}, ${feature.color}80)`,
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 24px',
+                  boxShadow: `0 10px 30px ${feature.color}40`
+                }} className="animate-float">
+                  <feature.icon size={32} color="white" />
+                </div>
+
+                <h3 style={{
+                  fontSize: '24px',
+                  fontWeight: '700',
+                  color: 'white',
+                  marginBottom: '16px'
+                }}>
                   {feature.title}
                 </h3>
-                <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300 leading-relaxed">
+
+                <p style={{
+                  color: 'var(--muted)',
+                  lineHeight: '1.6',
+                  fontSize: '16px'
+                }}>
                   {feature.description}
                 </p>
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
-      <section className="flex flex-col gap-12">
-        <div className="text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-200">
-            Setup Process
-          </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Follow these simple steps to get your private network running
-          </p>
+            ))}
+          </div>
         </div>
 
-        <div className="space-y-6 md:space-y-8">
-          {steps.map((step, index) => (
-            <div key={index} className="group relative">
-              {index < steps.length - 1 && (
-                <div className="hidden md:block absolute left-1/2 top-full w-0.5 h-8 bg-gradient-to-b from-gray-400/50 to-transparent transform -translate-x-1/2 z-0"></div>
-              )}
+        {/* Setup Process */}
+        <div style={{marginBottom: '120px'}}>
+          <div style={{textAlign: 'center', marginBottom: '80px'}}>
+            <h2 style={{
+              fontSize: 'clamp(2rem, 4vw, 3rem)',
+              fontWeight: '600',
+              color: 'white',
+              marginBottom: '24px'
+            }}>
+              5-Step Setup Process
+            </h2>
+            <p style={{
+              fontSize: '18px',
+              color: 'var(--muted)',
+              maxWidth: '600px',
+              margin: '0 auto'
+            }}>
+              Follow these simple steps to get your private network running
+            </p>
+          </div>
 
-              <div className="relative bg-gradient-to-b from-black-900/20 to-gray-600/20 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-gray-700/50 hover:border-gray-400/50 transition-all duration-500 ease-in-out hover:scale-[1.02] hover:shadow-2xl hover:shadow-gray-500/20 cursor-pointer">
-                <div className="absolute inset-0 bg-gradient-to-r from-gray-700/5 via-gray-600/5 to-gray-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                <div className="relative z-10 flex flex-col md:flex-row items-center gap-6 md:gap-8">
-                  <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-gray-300/40 to-gray-700/20 rounded-full flex items-center justify-center font-bold text-xl text-gray-900 group-hover:scale-110 transition-transform duration-300">
+          <div style={{display: 'flex', flexDirection: 'column', gap: '32px'}}>
+            {steps.map((step, index) => (
+              <div
+                key={index}
+                style={{
+                  background: 'var(--card-bg)',
+                  border: '1px solid var(--card-border)',
+                  borderRadius: '20px',
+                  padding: '40px',
+                  backdropFilter: 'blur(15px)',
+                  position: 'relative'
+                }}
+                className="card animate-fade-in"
+              >
+                <div className="step-grid" style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'auto auto 1fr',
+                  gap: '32px',
+                  alignItems: 'center'
+                }}>
+                  {/* Step Number */}
+                  <div style={{
+                    width: '60px',
+                    height: '60px',
+                    background: 'linear-gradient(135deg, var(--accent), var(--accent-light))',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '24px',
+                    fontWeight: '700',
+                    color: 'white',
+                    boxShadow: '0 10px 30px rgba(79, 124, 255, 0.4)'
+                  }}>
                     {index + 1}
                   </div>
 
-                  {step.icon && (
-                    <div className="flex-shrink-0 p-4 bg-gray-800/50 rounded-xl group-hover:bg-gray-700/50 transition-colors duration-300 group-hover:scale-110 transform">
-                      {step.icon}
-                    </div>
-                  )}
+                  {/* Icon */}
+                  <div style={{
+                    width: '60px',
+                    height: '60px',
+                    background: `linear-gradient(135deg, ${step.color}, ${step.color}80)`,
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    boxShadow: `0 10px 30px ${step.color}40`
+                  }} className="animate-float">
+                    <step.icon size={24} color="white" />
+                  </div>
 
-                  <div className="flex-1 text-center md:text-left">
-                    <h3 className="text-xl md:text-2xl font-semibold mb-3 group-hover:text-gray-200 transition-colors duration-300">
+                  {/* Content */}
+                  <div>
+                    <h3 style={{
+                      fontSize: '24px',
+                      fontWeight: '700',
+                      color: 'white',
+                      marginBottom: '12px'
+                    }}>
                       {step.title}
                     </h3>
-                    <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300 leading-relaxed text-base md:text-lg">
+                    <p style={{
+                      color: 'var(--muted)',
+                      lineHeight: '1.6',
+                      fontSize: '16px'
+                    }}>
                       {step.description}
                     </p>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </section>
-      <section className="text-center backdrop-blur-sm p-8 md:p-12 rounded-2xl border border-gray-700/50">
-        <h2 className="text-2xl md:text-3xl font-bold mb-4 bg-gradient-to-r from-gray-200 to-gray-500 bg-clip-text text-transparent">
-          Ready to Get Started?
-        </h2>
-        <p className="text-gray-400 text-lg mb-6 max-w-2xl mx-auto">
-          Set up your private network in minutes with our plug-and-play solution
-        </p>
-        <Link
-          href="/router-details/opal-pair"
-          className="px-8 py-4 bg-gray-200 hover:bg-gray-300 text-gray-900 font-semibold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-gray-400/20"
-        >
-          Order Now
-        </Link>
-      </section>
-    </main>
+
+        {/* CTA Section */}
+        <div style={{
+          textAlign: 'center',
+          padding: '60px 40px',
+          background: 'var(--card-bg)',
+          borderRadius: '24px',
+          border: '1px solid var(--card-border)',
+          backdropFilter: 'blur(15px)'
+        }} className="card animate-scale-in">
+          <div style={{
+            width: '80px',
+            height: '80px',
+            background: 'linear-gradient(135deg, var(--success), #00E5CC)',
+            borderRadius: '50%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            margin: '0 auto 32px',
+            boxShadow: '0 15px 40px rgba(0, 212, 170, 0.4)'
+          }} className="animate-float">
+            <Shield size={32} color="white" />
+          </div>
+          
+          <h2 style={{
+            fontSize: '32px',
+            fontWeight: '700',
+            color: 'white',
+            marginBottom: '16px'
+          }}>
+            Ready to Secure Your Network?
+          </h2>
+          <p style={{
+            color: 'var(--muted)',
+            marginBottom: '32px',
+            fontSize: '18px',
+            maxWidth: '500px',
+            margin: '0 auto 32px'
+          }}>
+            Set up your private network in minutes with our plug-and-play solution. 
+            No technical expertise required.
+          </p>
+          
+          <div style={{display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap'}}>
+            <Link
+              href="/shop"
+              className="btn btn-primary"
+              style={{
+                padding: '16px 32px',
+                fontSize: '18px',
+                fontWeight: '700'
+              }}
+            >
+              Order Now
+            </Link>
+            <Link
+              href="/contact"
+              className="btn btn-secondary"
+              style={{
+                padding: '16px 32px',
+                fontSize: '18px',
+                fontWeight: '600'
+              }}
+            >
+              Ask Questions
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
