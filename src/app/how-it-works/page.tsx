@@ -1,181 +1,288 @@
+'use client'
+
+import { motion } from 'framer-motion'
 import {
-  LayoutDashboard,
-  Router,
-  HousePlug,
-  Cable,
-  CircuitBoard,
-  Wifi,
-  Waypoints,
-  MonitorSmartphone,
+  Router, Shield, Wifi, Plug, AlertTriangle
 } from "lucide-react";
 import Link from "next/link";
 
 export default function HowItWorksPage() {
-  const features = [
-    {
-      title: "WireGuard",
-      description:
-        "Secure, fast, and reliable VPN protocol powering your private network.",
-      icon: <CircuitBoard size={48} />,
-    },
-    {
-      title: "2 Routers",
-      description:
-        "One exit router at home, one travel router with you — fully plug-and-play.",
-      icon: <Router size={48} />,
-    },
-    {
-      title: "Dashboard",
-      description:
-        "Easily manage your private network and choose which router is your exit or travel device.",
-      icon: <LayoutDashboard size={48} />,
-    },
-  ];
-
   const steps = [
     {
-      title: "Place Your Routers",
-      description:
-        "Put the routers in the desired locations in your home or office.",
-      icon: <Router size={48} />,
+      title: "Unbox & Connect",
+      description: "Connect your VPN router to your existing internet connection. Takes 30 seconds.",
+      icon: Plug,
+      color: "text-orange-400"
     },
     {
-      title: "Plug & Connect",
-      description: "Plug the routers in and connect them to the internet.",
-      icon: <HousePlug size={48} />,
+      title: "Instant Protection",
+      description: "Every device in your home is automatically secured with military-grade encryption.",
+      icon: Shield,
+      color: "text-green-400"
     },
     {
-      title: "Add Devices to Your Network",
-      description:
-        "Go to the dashboard and add your routers to your private network.",
-      icon: <MonitorSmartphone size={48} />,
-    },
-    {
-      title: "Choose Exit & Travel Routers",
-      description:
-        "Select which router will be your exit point and which one will be your travel router.",
-      icon: <Waypoints size={48} />,
-    },
-    {
-      title: "Connect & Go",
-      description:
-        "Connect your device to the travel router's Wi-Fi. That's it — done in a few clicks, no technical knowledge required.",
-      icon: <Wifi size={48} />,
-    },
+      title: "Access Home IP Anywhere",
+      description: "Travel anywhere and connect to your home IP address. Bypass geo-restrictions effortlessly.",
+      icon: Wifi,
+      color: "text-blue-400"
+    }
   ];
 
   return (
-    <main className="w-[95vw] md:w-[70vw] mx-auto py-12 md:py-20 flex flex-col gap-16 md:gap-24 text-white px-4 md:px-8 bg-transparent">
-      <section className="text-center flex flex-col gap-8">
-        <div className="space-y-4">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-gray-200 to-gray-500 bg-clip-text text-transparent leading-tight">
-            How It Works
-          </h1>
-          <div className="w-24 h-1 bg-gradient-to-r from-gray-400 to-gray-700 mx-auto rounded-full"></div>
-        </div>
-
-        <p className="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-          Our system uses{" "}
-          <span className="font-semibold text-white">WireGuard</span>,{" "}
-          <span className="font-semibold text-white">two routers</span>, and an
-          intuitive <span className="font-semibold text-white">dashboard</span>{" "}
-          to make private networking incredibly simple. No tech skills required.
-        </p>
-      </section>
-      <section className="flex flex-col gap-12">
-        <div className="text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-200">
-            Core Components
-          </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Three essential components working together seamlessly
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className="group relative bg-gradient-to-r from-[#0D0D0D] via-[#171717] to-[#0D0D0D] backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-gray-700/50 hover:border-gray-400/50 transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-gray-500/20 cursor-pointer"
+    <div className="min-h-screen bg-[#0a0a0a] text-white">
+      {/* Hero Section */}
+      <section className="relative min-h-[60vh] flex items-center bg-gradient-to-br from-red-950/10 via-[#0a0a0a] to-blue-950/10">
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-gray-700/5 via-gray-600/5 to-gray-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-              <div className="relative z-10 flex flex-col items-center text-center">
-                {feature.icon && (
-                  <div className="mb-6 p-4 bg-gray-800/30 rounded-xl group-hover:bg-gray-700/50 transition-colors duration-300 group-hover:scale-110 transform">
-                    {feature.icon}
-                  </div>
-                )}
-                <h3 className="text-xl md:text-2xl font-semibold mb-3 group-hover:text-gray-200 transition-colors duration-300">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300 leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
-            </div>
-          ))}
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                How It 
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">
+                  {" "}Works
+                </span>
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-400 mb-8">
+                Our system uses <strong className="text-orange-400">WireGuard</strong>, two routers, and an intuitive dashboard to make private networking incredibly simple. <strong className="text-green-400">No tech skills required.</strong>
+              </p>
+            </motion.div>
+          </div>
         </div>
       </section>
-      <section className="flex flex-col gap-12">
-        <div className="text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-200">
-            Setup Process
-          </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Follow these simple steps to get your private network running
-          </p>
+
+
+      {/* Core Components Section */}
+      <section className="py-12">
+        <div className="container mx-auto px-4">
+          <motion.div 
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+              Core
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">
+                {" "}Components
+              </span>
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Three essential components working together seamlessly
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="bg-gray-900/40 border border-gray-800 rounded-2xl p-8 text-center hover:border-orange-500/50 transition-all"
+            >
+              <Shield className="h-16 w-16 text-orange-400 mx-auto mb-6" />
+              <h3 className="text-2xl font-bold mb-4">WireGuard</h3>
+              <p className="text-gray-300">Secure, fast, and reliable VPN protocol powering your private network.</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-gray-900/40 border border-gray-800 rounded-2xl p-8 text-center hover:border-orange-500/50 transition-all"
+            >
+              <div className="flex justify-center gap-2 mb-6">
+                <Router className="h-8 w-8 text-green-400" />
+                <Router className="h-8 w-8 text-green-400" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">2 Routers</h3>
+              <p className="text-gray-300">One exit router at home, one travel router with you — fully plug-and-play.</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="bg-gray-900/40 border border-gray-800 rounded-2xl p-8 text-center hover:border-orange-500/50 transition-all"
+            >
+              <div className="h-16 w-16 bg-blue-500/20 rounded-xl flex items-center justify-center mx-auto mb-6">
+                <div className="text-blue-400 text-2xl font-bold">⚡</div>
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Dashboard</h3>
+              <p className="text-gray-300">Easily manage your private network and choose which router is your exit or travel device.</p>
+            </motion.div>
+          </div>
         </div>
+      </section>
 
-        <div className="space-y-6 md:space-y-8">
-          {steps.map((step, index) => (
-            <div key={index} className="group relative">
-              {index < steps.length - 1 && (
-                <div className="hidden md:block absolute left-1/2 top-full w-0.5 h-8 bg-gradient-to-b from-gray-400/50 to-transparent transform -translate-x-1/2 z-0"></div>
-              )}
+      {/* Setup Process Section */}
+      <section className="py-16 bg-gradient-to-b from-gray-900/50 to-transparent">
+        <div className="container mx-auto px-4">
+          <motion.div 
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+              Setup
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">
+                {" "}Process
+              </span>
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Follow these simple steps to get your private network running
+            </p>
+          </motion.div>
 
-              <div className="relative bg-gradient-to-b from-black-900/20 to-gray-600/20 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-gray-700/50 hover:border-gray-400/50 transition-all duration-500 ease-in-out hover:scale-[1.02] hover:shadow-2xl hover:shadow-gray-500/20 cursor-pointer">
-                <div className="absolute inset-0 bg-gradient-to-r from-gray-700/5 via-gray-600/5 to-gray-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                <div className="relative z-10 flex flex-col md:flex-row items-center gap-6 md:gap-8">
-                  <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-gray-300/40 to-gray-700/20 rounded-full flex items-center justify-center font-bold text-xl text-gray-900 group-hover:scale-110 transition-transform duration-300">
-                    {index + 1}
+          <div className="max-w-4xl mx-auto space-y-8">
+            {[
+              {
+                step: "1",
+                title: "Place Your Routers",
+                description: "Put the routers in the desired locations in your home or office.",
+                icon: "📍"
+              },
+              {
+                step: "2", 
+                title: "Plug & Connect",
+                description: "Plug the routers in and connect them to the internet.",
+                icon: "🔌"
+              },
+              {
+                step: "3",
+                title: "Add Devices to Your Network",
+                description: "Go to the dashboard and add your routers to your private network.",
+                icon: "📱"
+              },
+              {
+                step: "4",
+                title: "Choose Exit & Travel Routers",
+                description: "Select which router will be your exit point and which one will be your travel router.",
+                icon: "⚙️"
+              },
+              {
+                step: "5",
+                title: "Connect & Go",
+                description: "Connect your device to the travel router's Wi-Fi. That's it — done in a few clicks, no technical knowledge required.",
+                icon: "✅"
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
+                viewport={{ once: true }}
+                className={`flex items-center gap-8 ${index % 2 === 1 ? 'flex-row-reverse' : ''}`}
+              >
+                <div className="flex-shrink-0">
+                  <div className="w-20 h-20 bg-gradient-to-r from-orange-600 to-red-600 rounded-full flex items-center justify-center text-2xl mb-2">
+                    {item.icon}
                   </div>
-
-                  {step.icon && (
-                    <div className="flex-shrink-0 p-4 bg-gray-800/50 rounded-xl group-hover:bg-gray-700/50 transition-colors duration-300 group-hover:scale-110 transform">
-                      {step.icon}
-                    </div>
-                  )}
-
-                  <div className="flex-1 text-center md:text-left">
-                    <h3 className="text-xl md:text-2xl font-semibold mb-3 group-hover:text-gray-200 transition-colors duration-300">
-                      {step.title}
-                    </h3>
-                    <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300 leading-relaxed text-base md:text-lg">
-                      {step.description}
-                    </p>
+                  <div className="text-center">
+                    <span className="bg-gray-800 text-orange-400 px-3 py-1 rounded-full text-sm font-bold">
+                      Step {item.step}
+                    </span>
                   </div>
                 </div>
-              </div>
-            </div>
-          ))}
+                
+                <div className="flex-1">
+                  <div className="bg-gray-900/40 border border-gray-800 rounded-2xl p-6">
+                    <h3 className="text-xl font-bold mb-3">{item.title}</h3>
+                    <p className="text-gray-300 leading-relaxed">{item.description}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
-      <section className="text-center backdrop-blur-sm p-8 md:p-12 rounded-2xl border border-gray-700/50">
-        <h2 className="text-2xl md:text-3xl font-bold mb-4 bg-gradient-to-r from-gray-200 to-gray-500 bg-clip-text text-transparent">
-          Ready to Get Started?
-        </h2>
-        <p className="text-gray-400 text-lg mb-6 max-w-2xl mx-auto">
-          Set up your private network in minutes with our plug-and-play solution
-        </p>
-        <Link
-          href="/router-details/opal-pair"
-          className="px-8 py-4 bg-gray-200 hover:bg-gray-300 text-gray-900 font-semibold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-gray-400/20"
-        >
-          Order Now
-        </Link>
+
+      {/* Comparison */}
+      <section className="py-20 bg-gradient-to-b from-transparent to-gray-900/50">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto"
+          >
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Traditional VPNs */}
+              <div className="bg-red-950/20 border border-red-500/30 rounded-2xl p-8">
+                <h3 className="text-2xl font-bold mb-6 text-red-200">Traditional VPNs</h3>
+                <ul className="space-y-3 text-red-300">
+                  <li>❌ $10-15 per month forever</li>
+                  <li>❌ Install software on every device</li>
+                  <li>❌ 50-80% speed loss</li>
+                  <li>❌ 5-10 device limits</li>
+                  <li>❌ Complex configuration</li>
+                  <li>❌ Constant connection drops</li>
+                </ul>
+              </div>
+
+              {/* Our Solution */}
+              <div className="bg-green-950/20 border border-green-500/30 rounded-2xl p-8">
+                <h3 className="text-2xl font-bold mb-6 text-green-200">Our VPN Router</h3>
+                <ul className="space-y-3 text-green-300">
+                  <li>✅ $85 once, protected forever</li>
+                  <li>✅ Zero software installations</li>
+                  <li>✅ Full speed maintained</li>
+                  <li>✅ Unlimited devices protected</li>
+                  <li>✅ Plug and play setup</li>
+                  <li>✅ Rock-solid connection</li>
+                </ul>
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </section>
-    </main>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-b from-red-950/20 to-transparent">
+        <div className="container mx-auto px-4 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+              Ready to Stop
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">
+                {" "}Monthly Fees?
+              </span>
+            </h2>
+            <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
+              Join 50,000+ users who chose one-time payment over monthly subscriptions.
+            </p>
+
+            <div className="flex justify-center mb-8">
+              <Link href="/shop">
+                <motion.button
+                  className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-12 py-5 rounded-xl font-bold text-xl"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Get Your VPN Router - $85
+                </motion.button>
+              </Link>
+            </div>
+
+            <div className="flex justify-center gap-8 text-sm text-gray-500">
+              <span>✓ No monthly fees</span>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+    </div>
   );
 }

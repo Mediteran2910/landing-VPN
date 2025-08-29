@@ -7,121 +7,80 @@ import {
   Facebook,
   Instagram,
   Mail,
+  Shield,
+  Eye,
+  CheckCircle,
+  Server,
 } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-t from-[#0D0D0D] via-[#171717] to-[#0D0D0D] text-gray-300 py-16 px-8 md:px-16 border-t border-gray-600">
-      <div className="max-w-7xl mx-auto flex flex-wrap justify-center gap-12 md:max-w-[65vw]">
-        <div className="flex-1 min-w-[220px] text-left">
-          <h3 className="text-xl font-bold mb-4 text-gray-100">Our Startup</h3>
-          <p className="text-gray-400 leading-relaxed text-sm">
-            Established in 2025, headquartered in Zagreb, Croatia. We build
-            secure, private networking solutions for individuals and businesses.
-          </p>
-        </div>
+    <footer className="bg-gradient-to-t from-[#0D0D0D] via-[#171717] to-[#0D0D0D] text-gray-300 py-12 px-8 md:px-16 border-t border-gray-600">
+      <div className="max-w-6xl mx-auto">
+        
+        {/* Main Footer Content */}
+        <div className="grid md:grid-cols-3 gap-8 mb-8">
+          
+          {/* Company Info */}
+          <div>
+            <h3 className="text-lg font-bold mb-3 text-white">VPN-LOGO</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Professional cybersecurity solutions company, established 2025.
+              European-based operations ensuring GDPR compliance and data sovereignty.
+            </p>
+          </div>
 
-        <div className="flex-1 min-w-[160px] text-left">
-          <h4 className="font-semibold mb-4 text-gray-200">Quick Links</h4>
-          <ul className="space-y-2 text-sm">
-            <li>
-              <Link
-                href="/"
-                className="hover:text-white transition-colors duration-300"
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/shop"
-                className="hover:text-white transition-colors duration-300"
-              >
-                Shop
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/how-it-works"
-                className="hover:text-white transition-colors duration-300"
-              >
-                How It Works
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/contact"
-                className="hover:text-white transition-colors duration-300"
-              >
-                Contact
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/router-details/opal-pair"
-                className="hover:text-white transition-colors duration-300"
-              >
-                Order Now
-              </Link>
-            </li>
-          </ul>
-        </div>
+          {/* Payment Methods */}
+          <div>
+            <h4 className="text-sm font-semibold mb-3 text-gray-300">Payment Methods</h4>
+            <div className="flex gap-3 flex-wrap">
+              {/* Visa */}
+              <div className="bg-white rounded px-3 py-2 flex items-center min-w-[50px] h-8">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" className="h-4 w-auto"/>
+              </div>
+              
+              {/* Mastercard */}
+              <div className="bg-white rounded px-3 py-2 flex items-center min-w-[50px] h-8">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" className="h-5 w-auto"/>
+              </div>
+              
+              {/* PayPal */}
+              <div className="bg-white rounded px-3 py-2 flex items-center min-w-[50px] h-8">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" className="h-4 w-auto"/>
+              </div>
+              
+              {/* Stripe */}
+              <div className="bg-white rounded px-3 py-2 flex items-center min-w-[50px] h-8">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg" alt="Stripe" className="h-4 w-auto"/>
+              </div>
+            </div>
+          </div>
 
-        <div className="flex-1 min-w-[160px] text-left">
-          <h4 className="font-semibold mb-4 text-gray-200">Support</h4>
-          <ul className="space-y-2 text-sm">
-            <li className="flex items-center gap-2">
-              <Link
-                href="mailto:support@yourdomain.com"
-                className="hover:text-white transition-colors duration-300"
-              >
-                support@examplerdomain.com
+          {/* Social Links */}
+          <div>
+            <h4 className="text-sm font-semibold mb-3 text-gray-300">Follow Us</h4>
+            <div className="flex gap-3">
+              <Link href="https://linkedin.com" className="text-gray-400 hover:text-orange-400 transition-colors">
+                <Linkedin size={18} />
               </Link>
-            </li>
-            <li className="flex items-center gap-2">
-              <Link
-                href="tel:+38512345678"
-                className="hover:text-white transition-colors duration-300"
-              >
-                +385 42 52352 4124
+              <Link href="https://x.com" className="text-gray-400 hover:text-orange-400 transition-colors">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
               </Link>
-            </li>
-          </ul>
-        </div>
-
-        <div className="flex-1 min-w-[160px] text-left">
-          <h4 className="font-semibold mb-4 text-gray-200">Follow Us</h4>
-          <div className="flex gap-4">
-            <Link
-              href="https://linkedin.com"
-              className="hover:text-white transition-colors duration-300"
-            >
-              <Linkedin size={24} />
-            </Link>
-            <Link
-              href="https://github.com"
-              className="hover:text-white transition-colors duration-300"
-            >
-              <Facebook size={24} />
-            </Link>
-            <Link
-              href="https://twitter.com"
-              className="hover:text-white transition-colors duration-300"
-            >
-              <Twitter size={24} />
-            </Link>
-            <Link
-              href="https://twitter.com"
-              className="hover:text-white transition-colors duration-300"
-            >
-              <Instagram size={24} />
-            </Link>
+              <Link href="https://github.com" className="text-gray-400 hover:text-orange-400 transition-colors">
+                <Facebook size={18} />
+              </Link>
+              <Link href="https://instagram.com" className="text-gray-400 hover:text-orange-400 transition-colors">
+                <Instagram size={18} />
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="border-t border-gray-700/50 mt-12 pt-6 text-center text-gray-500 text-sm">
-        © 2025 Our Startup. All rights reserved.
+        <div className="border-t border-gray-700/50 mt-8 pt-6 text-center text-gray-500 text-sm">
+          © 2025 Our Startup. All rights reserved.
+        </div>
       </div>
     </footer>
   );
