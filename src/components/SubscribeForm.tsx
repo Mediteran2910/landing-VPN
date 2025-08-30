@@ -22,9 +22,7 @@ export default function SubscribeForm() {
       />
       <button
         type="submit"
-        className="w-full py-3 bg-gray-200 text-gray-900 font-semibold rounded-lg border border-transparent rounded-lg 
-             hover:bg-transparent hover:border-gray-200 hover:text-gray-200 
-             transition duration-300 ease-in-out text-center cursor-pointer"
+        className="w-full bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white py-3 rounded-xl font-semibold transition-all"
       >
         Join
       </button>
