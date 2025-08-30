@@ -104,6 +104,20 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Kickstarter Section */}
+      <section className="py-20 bg-gradient-to-b from-[#0a0a0a] to-gray-900/50">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <Kickastarter />
+          </motion.div>
+        </div>
+      </section>
+
       {/* Problem-Solution Section */}
       <section className="py-20 bg-gradient-to-b from-gray-900/50 to-red-950/20">
         <div className="container mx-auto px-4">
@@ -349,20 +363,6 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
           >
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Kickstarter Section */}
-      <section className="py-20 bg-gradient-to-b from-[#0a0a0a] to-gray-900/50">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <Kickastarter />
           </motion.div>
         </div>
       </section>
