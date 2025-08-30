@@ -269,16 +269,7 @@ export default function Home() {
                 <li>• Access home IP globally</li>
               </ul>
 
-              <div className="space-y-3">
-                <Link href="/router-details/single">
-                  <motion.button
-                    className="w-full border border-gray-600 text-gray-300 hover:border-orange-500 hover:text-orange-400 py-3 rounded-xl font-semibold transition-all"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    View Details
-                  </motion.button>
-                </Link>
+              <div className="space-y-4">
                 <Link href="/shop">
                   <motion.button
                     className="w-full bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white py-3 rounded-xl font-semibold"
@@ -287,6 +278,11 @@ export default function Home() {
                   >
                     Order Now
                   </motion.button>
+                </Link>
+                <Link href="/router-details/single" className="block text-center">
+                  <span className="text-gray-400 hover:text-orange-400 transition-colors text-sm underline underline-offset-4">
+                    View Technical Details
+                  </span>
                 </Link>
               </div>
             </motion.div>
@@ -326,16 +322,7 @@ export default function Home() {
                 <li>• Backup protection</li>
               </ul>
 
-              <div className="space-y-3">
-                <Link href="/router-details/pair">
-                  <motion.button
-                    className="w-full border border-gray-600 text-gray-300 hover:border-orange-500 hover:text-orange-400 py-3 rounded-xl font-semibold transition-all"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    View Details
-                  </motion.button>
-                </Link>
+              <div className="space-y-4">
                 <Link href="/shop">
                   <motion.button
                     className="w-full bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white py-3 rounded-xl font-semibold"
@@ -344,6 +331,11 @@ export default function Home() {
                   >
                     Order Now
                   </motion.button>
+                </Link>
+                <Link href="/router-details/pair" className="block text-center">
+                  <span className="text-gray-400 hover:text-orange-400 transition-colors text-sm underline underline-offset-4">
+                    View Technical Details
+                  </span>
                 </Link>
               </div>
             </motion.div>
