@@ -2,33 +2,9 @@
 
 import { motion } from 'framer-motion'
 import Link from "next/link";
-import { Mail, Phone, Users, Shield, MessageCircle } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 
 export default function ContactPage() {
-  const contacts = [
-    {
-      title: "Technical Support",
-      description: "VPN router setup, connection issues, or technical questions.",
-      email: "support@vpnrouter.com",
-      icon: Shield,
-      color: "text-orange-400"
-    },
-    {
-      title: "Sales & Orders",
-      description: "Questions about orders, shipping, or bulk purchases.",
-      email: "sales@vpnrouter.com", 
-      icon: Phone,
-      color: "text-green-400"
-    },
-    {
-      title: "General Inquiries",
-      description: "Partnership opportunities or general questions.",
-      email: "hello@vpnrouter.com",
-      icon: MessageCircle,
-      color: "text-blue-400"
-    },
-  ];
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white">
@@ -64,61 +40,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Contact Cards */}
-      <section className="py-20 bg-gradient-to-b from-gray-900/50 to-transparent">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-4">
-                Or Contact Us
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">
-                  {" "}Directly
-                </span>
-              </h2>
-              <p className="text-xl text-gray-400">
-                Prefer email? Reach out directly to the right department.
-              </p>
-            </div>
-            
-            <div className="grid gap-8">
-              {contacts.map((contact, index) => {
-                const Icon = contact.icon
-                return (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1, duration: 0.6 }}
-                    viewport={{ once: true }}
-                    className="bg-gray-900/40 border border-gray-800 rounded-2xl p-8 hover:border-orange-500/50 transition-all"
-                  >
-                    <div className="flex items-center gap-6">
-                      <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${
-                        index === 0 ? 'from-orange-600 to-red-600' :
-                        index === 1 ? 'from-green-600 to-green-500' :
-                        'from-blue-600 to-blue-500'
-                      } flex items-center justify-center`}>
-                        <Icon className="h-8 w-8 text-white" />
-                      </div>
-                      
-                      <div className="flex-1">
-                        <h3 className="text-2xl font-bold mb-2">{contact.title}</h3>
-                        <p className="text-gray-300 text-lg mb-4">{contact.description}</p>
-                        <Link
-                          href={`mailto:${contact.email}`}
-                          className="text-orange-400 hover:text-orange-300 font-semibold text-lg transition-colors"
-                        >
-                          {contact.email}
-                        </Link>
-                      </div>
-                    </div>
-                  </motion.div>
-                )
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* About Section */}
       <section className="py-20 bg-gradient-to-b from-gray-900/50 to-transparent">
