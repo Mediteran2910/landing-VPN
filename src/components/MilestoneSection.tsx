@@ -68,7 +68,7 @@ export default function MilestoneSection() {
                         </div>
                       </div>
 
-                      <h2 className="text-3xl lg:text-4xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-red-500 px-1">
+                      <h2 className="text-4xl lg:text-5xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-red-500 px-1">
                         {item.title}
                       </h2>
                       <h3 className="text-xl md:text-2xl text-gray-300 mb-4">
