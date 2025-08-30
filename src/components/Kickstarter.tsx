@@ -1,14 +1,13 @@
-import LottieAnimation from "./LottieAnimation";
 import SubscribeForm from "./SubscribeForm";
 
 export default function Kickastarter() {
   return (
     <div className="flex flex-col md:flex-row justify-center gap-10 w-full max-w-[95vw] lg:max-w-[65vw] mx-auto">
       <div className="w-full md:w-1/2 text-left text-gray-300 flex flex-col">
-        <h2 className="text-3xl md:text-4xl lg:text-7xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-gray-200 to-gray-500 px-1">
+        <h2 className="text-3xl md:text-4xl lg:text-7xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-red-500 px-1">
           Kickstarter Launch — 29.9.2025
         </h2>
-        <hr className="w-24 h-1 bg-gray-600 my-4 rounded-full" />
+        <hr className="w-24 h-1 bg-gradient-to-r from-orange-400 to-red-500 my-4 rounded-full" />
         <div className="space-y-4 text-gray-200 flex-grow">
           <p className="text-2xl md:text-3xl text-gray-400">
             Early Bird Offers — Save up to 35%!
@@ -35,15 +34,12 @@ export default function Kickastarter() {
           </ul>
         </div>
       </div>
-      <div className="w-full md:w-1/2 flex flex-col bg-[#171717] rounded-xl">
-        <div className="flex-grow flex items-center justify-center">
-          <LottieAnimation animation="email.lottie" />
-        </div>
-        <div className="w-full p-4 rounded-lg shadow-lg mt-6">
-          <h3 className="text-xl mb-1 text-gray-200 font-bold">
+      <div className="w-full md:w-1/2 flex flex-col bg-gray-900/60 border border-gray-800 rounded-xl hover:border-orange-500/50 transition-all">
+        <div className="w-full p-6 rounded-lg mt-6">
+          <h3 className="text-xl mb-1 text-white font-bold">
             Join Our Early Access Newsletter
           </h3>
-          <p className="text-gray-400 mb-4">
+          <p className="text-gray-300 mb-4">
             Be the first to know about launches, exclusive discounts, and
             behind-the-scenes updates.
           </p>

@@ -1,4 +1,3 @@
-import LottieAnimation from "@/components/LottieAnimation";
 import { Smartphone, Store } from "lucide-react";
 
 export default function MilestoneSection() {
@@ -88,7 +87,7 @@ export default function MilestoneSection() {
                       <div
                         className="w-full max-w-[500px] aspect-square flex items-center justify-center bg-gray-900/60 border border-gray-800 rounded-2xl hover:border-orange-500/50 transition-all"
                       >
-                        <LottieAnimation animation="email.lottie" speed={1} />
+                        <item.icon className="h-32 w-32 text-orange-400" />
                       </div>
                     </div>
                   </div>
