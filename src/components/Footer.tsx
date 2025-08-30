@@ -6,6 +6,7 @@ import {
   Twitter,
   Facebook,
   Instagram,
+  Youtube,
   Mail,
   Shield,
   Eye,
@@ -89,6 +90,9 @@ export default function Footer() {
               </Link>
               <Link href="https://instagram.com" className="text-gray-400 hover:text-orange-400 transition-colors p-2 rounded-lg hover:bg-gray-800/50">
                 <Instagram size={24} />
+              </Link>
+              <Link href="https://youtube.com" className="text-gray-400 hover:text-orange-400 transition-colors p-2 rounded-lg hover:bg-gray-800/50">
+                <Youtube size={24} />
               </Link>
             </div>
           </div>
