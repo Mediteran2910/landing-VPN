@@ -35,7 +35,7 @@ export default function MilestoneSection() {
       <article className="w-full py-20 bg-gradient-to-b from-gray-900/50 to-[#0a0a0a]">
         <div className="max-w-[95vw] lg:max-w-[65vw] mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-red-500 px-1">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-red-500 px-1">
               Product Roadmap
             </h2>
             <hr className="w-24 h-1 bg-gradient-to-r from-orange-400 to-red-500 mx-auto mb-6 rounded-full" />
@@ -68,7 +68,7 @@ export default function MilestoneSection() {
                         </div>
                       </div>
 
-                      <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-red-500 px-1">
+                      <h2 className="text-3xl lg:text-4xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-red-500 px-1">
                         {item.title}
                       </h2>
                       <h3 className="text-xl md:text-2xl text-gray-300 mb-4">
