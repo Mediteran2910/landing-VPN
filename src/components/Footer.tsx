@@ -19,16 +19,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto">
         
         {/* Main Footer Content */}
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
-          
-          {/* Company Info */}
-          <div>
-            <h3 className="text-lg font-bold mb-3 text-white">VPN-LOGO</h3>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              Professional cybersecurity solutions company, established 2025.
-              European-based operations ensuring GDPR compliance and data sovereignty.
-            </p>
-          </div>
+        <div className="grid md:grid-cols-3 gap-8 mb-8">
 
           {/* Know Us */}
           <div>
