@@ -19,7 +19,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto">
         
         {/* Main Footer Content */}
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
+        <div className="grid md:grid-cols-2 gap-8 mb-8">
           
           {/* Company Info */}
           <div>
@@ -28,32 +28,6 @@ export default function Footer() {
               Professional cybersecurity solutions company, established 2025.
               European-based operations ensuring GDPR compliance and data sovereignty.
             </p>
-          </div>
-
-          {/* Payment Methods */}
-          <div>
-            <h4 className="text-sm font-semibold mb-3 text-gray-300">Payment Methods</h4>
-            <div className="flex gap-3 flex-wrap">
-              {/* Visa */}
-              <div className="bg-white rounded px-3 py-2 flex items-center min-w-[50px] h-8">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" className="h-4 w-auto"/>
-              </div>
-              
-              {/* Mastercard */}
-              <div className="bg-white rounded px-3 py-2 flex items-center min-w-[50px] h-8">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" className="h-5 w-auto"/>
-              </div>
-              
-              {/* PayPal */}
-              <div className="bg-white rounded px-3 py-2 flex items-center min-w-[50px] h-8">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" className="h-4 w-auto"/>
-              </div>
-              
-              {/* Stripe */}
-              <div className="bg-white rounded px-3 py-2 flex items-center min-w-[50px] h-8">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg" alt="Stripe" className="h-4 w-auto"/>
-              </div>
-            </div>
           </div>
 
           {/* Social Links */}
