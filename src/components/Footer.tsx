@@ -19,7 +19,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto">
         
         {/* Main Footer Content */}
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
+        <div className="grid md:grid-cols-4 gap-8 mb-8">
           
           {/* Company Info */}
           <div>
@@ -28,6 +28,25 @@ export default function Footer() {
               Professional cybersecurity solutions company, established 2025.
               European-based operations ensuring GDPR compliance and data sovereignty.
             </p>
+          </div>
+
+          {/* Know Us */}
+          <div>
+            <h4 className="text-sm font-semibold mb-3 text-gray-300">Know Us</h4>
+            <div className="space-y-2">
+              <Link href="/about" className="block text-gray-400 hover:text-orange-400 transition-colors text-sm">
+                About Us
+              </Link>
+              <Link href="/vpn-name" className="block text-gray-400 hover:text-orange-400 transition-colors text-sm">
+                VPN-Name
+              </Link>
+              <Link href="/shop" className="block text-gray-400 hover:text-orange-400 transition-colors text-sm">
+                Shop
+              </Link>
+              <Link href="/affiliate" className="block text-gray-400 hover:text-orange-400 transition-colors text-sm">
+                Affiliate
+              </Link>
+            </div>
           </div>
 
           {/* Policies */}
