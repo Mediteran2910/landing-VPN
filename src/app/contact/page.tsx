@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import Link from "next/link";
 import { Mail, Phone, Users, Shield, MessageCircle } from "lucide-react";
+import ContactForm from "@/components/ContactForm";
 
 export default function ContactPage() {
   const contacts = [
@@ -54,10 +55,31 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Contact Cards */}
+      {/* Contact Form Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
+            <ContactForm />
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Cards */}
+      <section className="py-20 bg-gradient-to-b from-gray-900/50 to-transparent">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold mb-4">
+                Or Contact Us
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">
+                  {" "}Directly
+                </span>
+              </h2>
+              <p className="text-xl text-gray-400">
+                Prefer email? Reach out directly to the right department.
+              </p>
+            </div>
+            
             <div className="grid gap-8">
               {contacts.map((contact, index) => {
                 const Icon = contact.icon
@@ -65,8 +87,9 @@ export default function ContactPage() {
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.2, duration: 0.6 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1, duration: 0.6 }}
+                    viewport={{ once: true }}
                     className="bg-gray-900/40 border border-gray-800 rounded-2xl p-8 hover:border-orange-500/50 transition-all"
                   >
                     <div className="flex items-center gap-6">
