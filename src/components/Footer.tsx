@@ -32,7 +32,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-12 mb-12">
 
           {/* Know Us */}
-          <div className="text-center md:text-left">
+          <div className="text-center">
             <h4 className="text-lg font-semibold mb-6 text-white">Know Us</h4>
             <div className="space-y-3">
               <Link href="/about" className="block text-gray-400 hover:text-orange-400 transition-colors text-base">
@@ -51,7 +51,7 @@ export default function Footer() {
           </div>
 
           {/* Policies */}
-          <div className="text-center md:text-left">
+          <div className="text-center">
             <h4 className="text-lg font-semibold mb-6 text-white">Policies</h4>
             <div className="space-y-3">
               <Link href="/shipping-policy" className="block text-gray-400 hover:text-orange-400 transition-colors text-base">
@@ -73,9 +73,9 @@ export default function Footer() {
           </div>
 
           {/* Social Links */}
-          <div className="text-center md:text-left">
+          <div className="text-center">
             <h4 className="text-lg font-semibold mb-6 text-white">Follow Us</h4>
-            <div className="flex gap-4 justify-center md:justify-start">
+            <div className="flex gap-4 justify-center">
               <Link href="https://linkedin.com" className="text-gray-400 hover:text-orange-400 transition-colors p-2 rounded-lg hover:bg-gray-800/50">
                 <Linkedin size={24} />
               </Link>
