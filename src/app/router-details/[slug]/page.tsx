@@ -96,14 +96,11 @@ export default function RouterDetailsPage() {
             aria-label="Purchase Information"
             className="flex flex-col md:flex-row md:items-center md:justify-between gap-4"
           >
-            <p className="text-4xl font-bold text-green-400">
-              €{price}
-              {sale && (
-                <span className="text-lg line-through text-red-500 ml-2">
-                  €{sale}
-                </span>
-              )}
-            </p>
+            <div>
+              <div className="text-4xl font-bold text-orange-400 mb-2">${price}</div>
+              <div className="text-lg text-gray-500 line-through">${sale}</div>
+              <div className="text-sm text-green-400">Save ${sale - price}</div>
+            </div>
 
             <a
               href="https://www.kickstarter.com/projects/your-project-id"
