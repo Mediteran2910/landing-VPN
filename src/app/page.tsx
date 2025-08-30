@@ -339,6 +339,23 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Kickstarter Section */}
+      <section className="py-20 bg-gradient-to-b from-[#0a0a0a] to-gray-900/50">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <Kickastarter />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Milestone Section */}
+      <MilestoneSection />
+
       {/* Urgency + Final CTA Section */}
       <section className="py-20 bg-gradient-to-b from-red-950/20 to-transparent">
         <div className="container mx-auto px-4 text-center">
