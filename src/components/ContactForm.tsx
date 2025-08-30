@@ -125,6 +125,19 @@ export default function ContactForm() {
           {isSubmitting ? "Sending..." : "Send Message"}
         </motion.button>
       </form>
+
+      {/* Alternative Contact */}
+      <div className="mt-8 pt-6 border-t border-gray-700/50 text-center">
+        <p className="text-gray-400 text-sm">
+          Or email us directly at:{" "}
+          <a 
+            href="mailto:support@vpnrouter.com" 
+            className="text-orange-400 hover:text-orange-300 font-semibold transition-colors"
+          >
+            support@vpnrouter.com
+          </a>
+        </p>
+      </div>
     </motion.div>
   );
 }
