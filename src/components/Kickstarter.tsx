@@ -5,7 +5,7 @@ export default function Kickastarter() {
     <div className="flex flex-col md:flex-row justify-center gap-10 w-full max-w-[95vw] lg:max-w-[65vw] mx-auto">
       <div className="w-full md:w-1/2 text-left text-gray-300 flex flex-col">
         <h2 className="text-3xl md:text-4xl lg:text-7xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-red-500 px-1">
-          Kickstarter Launch — 29.9.2025
+          Kickstarter Launch — Soon
         </h2>
         <hr className="w-24 h-1 bg-gradient-to-r from-orange-400 to-red-500 my-4 rounded-full" />
         <div className="space-y-4 text-gray-200 flex-grow">
