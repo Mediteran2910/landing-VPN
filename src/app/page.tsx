@@ -312,9 +312,9 @@ export default function Home() {
               </div>
 
               <ul className="text-left space-y-2 mb-8 text-gray-300">
+                <li>• Access home IP globally</li>
                 <li>• Unlimited device protection</li>
                 <li>• 3 Ethernet ports</li>
-                <li>• Access home IP globally</li>
               </ul>
 
               <div className="space-y-6">
@@ -369,10 +369,11 @@ export default function Home() {
               </div>
 
               <ul className="text-left space-y-2 mb-8 text-gray-300">
+                <li>• Access home IP globally</li>
+                <li>• Unlimited device protection</li>
                 <li>• 2x Router protection</li>
-                <li>• 6 Total ethernet ports</li>
                 <li>• Complete home coverage</li>
-                <li>• Backup protection</li>
+                <li>• 6 Total ethernet ports</li>
               </ul>
 
               <div className="space-y-6">
