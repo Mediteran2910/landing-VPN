@@ -1,0 +1,143 @@
+"use client";
+import { useState } from "react";
+import { motion } from "framer-motion";
+
+export default function ContactForm() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: ""
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate form submission
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
+    alert(`Thanks for your message, ${formData.name}! We'll get back to you soon.`);
+    setFormData({ name: "", email: "", subject: "", message: "" });
+    setIsSubmitting(false);
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      className="bg-gray-900/40 border border-gray-800 rounded-2xl p-8 hover:border-orange-500/50 transition-all"
+    >
+      <h3 className="text-3xl font-bold mb-2">Send us a Message</h3>
+      <p className="text-gray-400 mb-8">
+        Have a specific question? Fill out the form below and we'll respond within 24 hours.
+      </p>
+
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="grid md:grid-cols-2 gap-6">
+          <div>
+            <label htmlFor="name" className="block text-sm font-semibold text-gray-300 mb-2">
+              Full Name *
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              value={formData.name}
+              onChange={handleChange}
+              className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-all"
+              placeholder="Enter your full name"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="email" className="block text-sm font-semibold text-gray-300 mb-2">
+              Email Address *
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              value={formData.email}
+              onChange={handleChange}
+              className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-all"
+              placeholder="Enter your email address"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label htmlFor="subject" className="block text-sm font-semibold text-gray-300 mb-2">
+            Subject *
+          </label>
+          <select
+            id="subject"
+            name="subject"
+            required
+            value={formData.subject}
+            onChange={handleChange}
+            className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-xl text-white focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-all"
+          >
+            <option value="">Select a subject</option>
+            <option value="technical-support">Technical Support</option>
+            <option value="sales-inquiry">Sales & Orders</option>
+            <option value="partnership">Partnership Opportunity</option>
+            <option value="general">General Inquiry</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div>
+          <label htmlFor="message" className="block text-sm font-semibold text-gray-300 mb-2">
+            Message *
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            required
+            rows={6}
+            value={formData.message}
+            onChange={handleChange}
+            className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-all resize-none"
+            placeholder="Tell us more about your inquiry..."
+          />
+        </div>
+
+        <motion.button
+          type="submit"
+          disabled={isSubmitting}
+          className="w-full bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 disabled:from-gray-600 disabled:to-gray-700 text-white py-4 rounded-xl font-semibold text-lg transition-all"
+          whileHover={!isSubmitting ? { scale: 1.02 } : {}}
+          whileTap={!isSubmitting ? { scale: 0.98 } : {}}
+        >
+          {isSubmitting ? "Sending..." : "Send Message"}
+        </motion.button>
+      </form>
+
+      {/* Alternative Contact */}
+      <div className="mt-8 pt-6 border-t border-gray-700/50 text-center">
+        <p className="text-gray-400 text-sm">
+          Or email us directly at:{" "}
+          <a 
+            href="mailto:support@vpnrouter.com" 
+            className="text-orange-400 hover:text-orange-300 font-semibold transition-colors"
+          >
+            support@vpnrouter.com
+          </a>
+        </p>
+      </div>
+    </motion.div>
+  );
+}

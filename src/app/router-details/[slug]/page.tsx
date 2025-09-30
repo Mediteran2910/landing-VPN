@@ -88,33 +88,25 @@ export default function RouterDetailsPage() {
           </h1>
 
           <p className="text-gray-400 text-lg">
-            The GL.iNet Opal is a compact pocket router designed for travelers
-            who want reliable WiFi anywhere. With its plug-and-play setup, you
-            just connect it and it works — no technical skills needed. It
-            provides secure, dual-band WiFi for your devices, whether you’re in
-            a hotel, café, or on the road. Small enough to fit in your bag, yet
-            powerful enough to keep you connected, the Opal is the perfect
-            companion for staying online wherever you go.
+            Compact VPN router with plug-and-play setup. Provides secure, dual-band WiFi 
+            for all your devices with no technical skills required. Perfect for home or travel.
           </p>
 
           <section
             aria-label="Purchase Information"
             className="flex flex-col md:flex-row md:items-center md:justify-between gap-4"
           >
-            <p className="text-4xl font-bold text-green-400">
-              €{price}
-              {sale && (
-                <span className="text-lg line-through text-red-500 ml-2">
-                  €{sale}
-                </span>
-              )}
-            </p>
+            <div>
+              <div className="text-4xl font-bold text-orange-400 mb-2">${price}</div>
+              <div className="text-lg text-gray-500 line-through">${sale}</div>
+              <div className="text-sm text-green-400">Save ${sale - price}</div>
+            </div>
 
             <a
               href="https://www.kickstarter.com/projects/your-project-id"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-center px-6 py-3 bg-green-500 text-gray-900 font-bold rounded-lg hover:bg-green-400 transition"
+              className="text-center px-6 py-3 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white font-semibold rounded-xl transition-all"
             >
               Buy Now
             </a>

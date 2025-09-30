@@ -6,122 +6,101 @@ import {
   Twitter,
   Facebook,
   Instagram,
+  Youtube,
   Mail,
+  Shield,
+  Eye,
+  CheckCircle,
+  Server,
 } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-t from-[#0D0D0D] via-[#171717] to-[#0D0D0D] text-gray-300 py-16 px-8 md:px-16 border-t border-gray-600">
-      <div className="max-w-7xl mx-auto flex flex-wrap justify-center gap-12 md:max-w-[65vw]">
-        <div className="flex-1 min-w-[220px] text-left">
-          <h3 className="text-xl font-bold mb-4 text-gray-100">Our Startup</h3>
-          <p className="text-gray-400 leading-relaxed text-sm">
-            Established in 2025, headquartered in Zagreb, Croatia. We build
-            secure, private networking solutions for individuals and businesses.
-          </p>
-        </div>
+    <footer className="bg-gradient-to-t from-[#0D0D0D] via-[#171717] to-[#0D0D0D] text-gray-300 py-12 px-8 md:px-16 border-t border-gray-600">
+      <div className="max-w-6xl mx-auto">
+        
+        {/* Main Footer Content */}
+        <div className="grid md:grid-cols-4 gap-8 mb-8">
+          
+          {/* Brand Section */}
+          <div className="text-center md:text-left">
+            <h3 className="text-2xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">
+              VPN-LOGO
+            </h3>
+            <p className="text-gray-400 text-sm max-w-xs">
+              Secure your entire network with one-time purchase. No monthly fees, unlimited protection.
+            </p>
+          </div>
 
-        <div className="flex-1 min-w-[160px] text-left">
-          <h4 className="font-semibold mb-4 text-gray-200">Quick Links</h4>
-          <ul className="space-y-2 text-sm">
-            <li>
-              <Link
-                href="/"
-                className="hover:text-white transition-colors duration-300"
-              >
-                Home
+          {/* Know Us */}
+          <div className="text-center md:text-left">
+            <h4 className="text-base font-semibold mb-4 text-white">Know Us</h4>
+            <div className="space-y-2">
+              <Link href="/about" className="block text-gray-400 hover:text-orange-400 transition-colors text-sm">
+                About Us
               </Link>
-            </li>
-            <li>
-              <Link
-                href="/shop"
-                className="hover:text-white transition-colors duration-300"
-              >
+              <Link href="/vpn-name" className="block text-gray-400 hover:text-orange-400 transition-colors text-sm">
+                VPN-Name
+              </Link>
+              <Link href="/shop" className="block text-gray-400 hover:text-orange-400 transition-colors text-sm">
                 Shop
               </Link>
-            </li>
-            <li>
-              <Link
-                href="/how-it-works"
-                className="hover:text-white transition-colors duration-300"
-              >
-                How It Works
+              <Link href="/affiliate" className="block text-gray-400 hover:text-orange-400 transition-colors text-sm">
+                Affiliate
               </Link>
-            </li>
-            <li>
-              <Link
-                href="/contact"
-                className="hover:text-white transition-colors duration-300"
-              >
-                Contact
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/router-details/opal-pair"
-                className="hover:text-white transition-colors duration-300"
-              >
-                Order Now
-              </Link>
-            </li>
-          </ul>
-        </div>
+            </div>
+          </div>
 
-        <div className="flex-1 min-w-[160px] text-left">
-          <h4 className="font-semibold mb-4 text-gray-200">Support</h4>
-          <ul className="space-y-2 text-sm">
-            <li className="flex items-center gap-2">
-              <Link
-                href="mailto:support@yourdomain.com"
-                className="hover:text-white transition-colors duration-300"
-              >
-                support@examplerdomain.com
+          {/* Policies */}
+          <div className="text-center md:text-left">
+            <h4 className="text-base font-semibold mb-4 text-white">Policies</h4>
+            <div className="space-y-2">
+              <Link href="/shipping-policy" className="block text-gray-400 hover:text-orange-400 transition-colors text-sm">
+                Shipping Policy
               </Link>
-            </li>
-            <li className="flex items-center gap-2">
-              <Link
-                href="tel:+38512345678"
-                className="hover:text-white transition-colors duration-300"
-              >
-                +385 42 52352 4124
+              <Link href="/payment-methods" className="block text-gray-400 hover:text-orange-400 transition-colors text-sm">
+                Payment Methods
               </Link>
-            </li>
-          </ul>
-        </div>
+              <Link href="/return-refund" className="block text-gray-400 hover:text-orange-400 transition-colors text-sm">
+                Return and Refund
+              </Link>
+              <Link href="/privacy-policy" className="block text-gray-400 hover:text-orange-400 transition-colors text-sm">
+                Privacy Policy
+              </Link>
+              <Link href="/terms-of-service" className="block text-gray-400 hover:text-orange-400 transition-colors text-sm">
+                Terms of Service
+              </Link>
+            </div>
+          </div>
 
-        <div className="flex-1 min-w-[160px] text-left">
-          <h4 className="font-semibold mb-4 text-gray-200">Follow Us</h4>
-          <div className="flex gap-4">
-            <Link
-              href="https://linkedin.com"
-              className="hover:text-white transition-colors duration-300"
-            >
-              <Linkedin size={24} />
-            </Link>
-            <Link
-              href="https://github.com"
-              className="hover:text-white transition-colors duration-300"
-            >
-              <Facebook size={24} />
-            </Link>
-            <Link
-              href="https://twitter.com"
-              className="hover:text-white transition-colors duration-300"
-            >
-              <Twitter size={24} />
-            </Link>
-            <Link
-              href="https://twitter.com"
-              className="hover:text-white transition-colors duration-300"
-            >
-              <Instagram size={24} />
-            </Link>
+          {/* Social Links */}
+          <div className="text-center md:text-left">
+            <h4 className="text-base font-semibold mb-4 text-white">Follow Us</h4>
+            <div className="flex gap-3 justify-center md:justify-start">
+              <Link href="https://linkedin.com" className="text-gray-400 hover:text-orange-400 transition-colors p-1 rounded hover:bg-gray-800/50">
+                <Linkedin size={20} />
+              </Link>
+              <Link href="https://x.com" className="text-gray-400 hover:text-orange-400 transition-colors p-1 rounded hover:bg-gray-800/50">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+              </Link>
+              <Link href="https://github.com" className="text-gray-400 hover:text-orange-400 transition-colors p-1 rounded hover:bg-gray-800/50">
+                <Facebook size={20} />
+              </Link>
+              <Link href="https://instagram.com" className="text-gray-400 hover:text-orange-400 transition-colors p-1 rounded hover:bg-gray-800/50">
+                <Instagram size={20} />
+              </Link>
+              <Link href="https://youtube.com" className="text-gray-400 hover:text-orange-400 transition-colors p-1 rounded hover:bg-gray-800/50">
+                <Youtube size={20} />
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="border-t border-gray-700/50 mt-12 pt-6 text-center text-gray-500 text-sm">
-        © 2025 Our Startup. All rights reserved.
+        <div className="border-t border-gray-700/50 pt-6 text-center text-gray-500 text-sm">
+          © 2025 Our Startup. All rights reserved.
+        </div>
       </div>
     </footer>
   );
