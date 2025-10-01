@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
 export default function MobileNav() {
@@ -41,6 +42,12 @@ export default function MobileNav() {
               {link.label}
             </a>
           ))}
+          <Link
+            href="/dashboard"
+            className="bg-gradient-to-r from-orange-400 to-red-500 text-white px-5 py-2 rounded-lg font-semibold transition-all duration-300 hover:from-orange-500 hover:to-red-600"
+          >
+            Dashboard
+          </Link>
         </div>
       )}
     </div>

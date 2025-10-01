@@ -65,7 +65,7 @@ export default function Home() {
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-8 text-gray-300">
                   Protect Your{" "}
                   <strong className="text-white">Entire Network</strong> with
-                  One Router
+                  BuraVPN Router
                 </h2>
 
                 <p className="text-xl md:text-2xl text-gray-400 mb-8 leading-relaxed">
