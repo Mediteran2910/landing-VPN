@@ -4,13 +4,9 @@ export default function MilestoneSection() {
   const roadmapItems = [
     {
       id: 1,
-      title: "Mobile App",
+      title: "Mobile/Desktop App",
       subtitle: "Remote Control & Monitoring",
-      description: [
-        "Software on your device",
-        "No need for 2 routers",
-        "Real-time connection monitoring and statistics",
-      ],
+      description: ["Software on your device", "No need for 2 routers"],
       icon: Smartphone,
       status: "In Development",
       color: "bg-gradient-to-r from-orange-600 to-red-600",
@@ -38,7 +34,8 @@ export default function MilestoneSection() {
             <h2 className="text-4xl lg:text-5xl font-bold mb-4">
               <span className="text-white">Product</span>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">
-                {" "}Roadmap
+                {" "}
+                Roadmap
               </span>
             </h2>
             <hr className="w-24 h-1 bg-gradient-to-r from-orange-400 to-red-500 mx-auto mb-6 rounded-full" />

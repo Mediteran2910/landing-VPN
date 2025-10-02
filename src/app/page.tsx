@@ -45,7 +45,7 @@ export default function Home() {
           />
         </div>
 
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto py-10 px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
             <div className="text-center max-w-4xl mx-auto">
               {/* Main Headlines */}
@@ -65,7 +65,11 @@ export default function Home() {
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-8 text-gray-300">
                   Protect Your{" "}
                   <strong className="text-white">Entire Network</strong> with
-                  BuraVPN Router
+                  <strong className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-500">
+                    {" "}
+                    BuraVPN{" "}
+                  </strong>{" "}
+                  Routers
                 </h2>
 
                 <p className="text-xl md:text-2xl text-gray-400 mb-8 leading-relaxed">
@@ -300,7 +304,9 @@ export default function Home() {
               <div className="mb-6">
                 <Router className="h-16 w-16 text-orange-400 mx-auto mb-4" />
                 <h3 className="text-2xl font-bold mb-2">Single Router</h3>
-                <p className="text-gray-400">Perfect for most homes</p>
+                <p className="text-gray-400">
+                  Requires a second router to work
+                </p>
               </div>
 
               <div className="mb-6">
@@ -312,8 +318,8 @@ export default function Home() {
               </div>
 
               <ul className="text-left space-y-2 mb-8 text-gray-300">
+                <li>• Plug-and-play setup</li>
                 <li>• Access home IP globally</li>
-                <li>• Unlimited device protection</li>
                 <li>• 3 Ethernet ports</li>
               </ul>
 
@@ -357,7 +363,7 @@ export default function Home() {
                   <Router className="h-12 w-12 text-orange-400" />
                 </div>
                 <h3 className="text-2xl font-bold mb-2">Pair Routers</h3>
-                <p className="text-gray-400">Maximum coverage & backup</p>
+                <p className="text-gray-400">Complete setup – ready to use</p>
               </div>
 
               <div className="mb-6">
@@ -369,11 +375,9 @@ export default function Home() {
               </div>
 
               <ul className="text-left space-y-2 mb-8 text-gray-300">
+                <li>• Plug-and-play setup</li>
                 <li>• Access home IP globally</li>
-                <li>• Unlimited device protection</li>
-                <li>• 2x Router protection</li>
-                <li>• Complete home coverage</li>
-                <li>• 6 Total ethernet ports</li>
+                <li>• 6 total ethernet ports</li>
               </ul>
 
               <div className="space-y-6">

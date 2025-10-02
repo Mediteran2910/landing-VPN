@@ -1,6 +1,11 @@
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+
+export const metadata = {
+  title: "Home | BuraVPN",
+  description: "Welcome to the Home page",
+};
 export default function RootLayout({
   children,
 }: {
@@ -8,6 +13,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/fav-bura.png" />
+      </head>
       <body className="relative min-h-screen">
         <Header />
         {children}

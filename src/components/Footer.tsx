@@ -18,80 +18,130 @@ export default function Footer() {
   return (
     <footer className="bg-gradient-to-t from-[#0D0D0D] via-[#171717] to-[#0D0D0D] text-gray-300 py-12 px-8 md:px-16 border-t border-gray-600">
       <div className="max-w-6xl mx-auto">
-        
         {/* Main Footer Content */}
         <div className="grid md:grid-cols-4 gap-8 mb-8">
-          
           {/* Brand Section */}
-          <div className="text-center md:text-left">
+          <div className="text-left">
             <h3 className="text-2xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">
               VPN-LOGO
             </h3>
             <p className="text-gray-400 text-sm max-w-xs">
-              Secure your entire network with one-time purchase. No monthly fees, unlimited protection.
+              Secure your entire network with one-time purchase. No monthly
+              fees, unlimited protection.
             </p>
           </div>
 
           {/* Know Us */}
-          <div className="text-center md:text-left">
+          <div className="text-left">
             <h4 className="text-base font-semibold mb-4 text-white">Know Us</h4>
             <div className="space-y-2">
-              <Link href="/about" className="block text-gray-400 hover:text-orange-400 transition-colors text-sm">
+              <Link
+                href="/about"
+                className="block text-gray-400 hover:text-orange-400 transition-colors text-sm"
+              >
                 About Us
               </Link>
-              <Link href="/vpn-name" className="block text-gray-400 hover:text-orange-400 transition-colors text-sm">
+              <Link
+                href="/vpn-name"
+                className="block text-gray-400 hover:text-orange-400 transition-colors text-sm"
+              >
                 VPN-Name
               </Link>
-              <Link href="/shop" className="block text-gray-400 hover:text-orange-400 transition-colors text-sm">
+              <Link
+                href="/shop"
+                className="block text-gray-400 hover:text-orange-400 transition-colors text-sm"
+              >
                 Shop
               </Link>
-              <Link href="/affiliate" className="block text-gray-400 hover:text-orange-400 transition-colors text-sm">
+              <Link
+                href="/affiliate"
+                className="block text-gray-400 hover:text-orange-400 transition-colors text-sm"
+              >
                 Affiliate
               </Link>
             </div>
           </div>
 
           {/* Policies */}
-          <div className="text-center md:text-left">
-            <h4 className="text-base font-semibold mb-4 text-white">Policies</h4>
+          <div className="text-left">
+            <h4 className="text-base font-semibold mb-4 text-white">
+              Policies
+            </h4>
             <div className="space-y-2">
-              <Link href="/shipping-policy" className="block text-gray-400 hover:text-orange-400 transition-colors text-sm">
+              <Link
+                href="/shipping-policy"
+                className="block text-gray-400 hover:text-orange-400 transition-colors text-sm"
+              >
                 Shipping Policy
               </Link>
-              <Link href="/payment-methods" className="block text-gray-400 hover:text-orange-400 transition-colors text-sm">
+              <Link
+                href="/payment-methods"
+                className="block text-gray-400 hover:text-orange-400 transition-colors text-sm"
+              >
                 Payment Methods
               </Link>
-              <Link href="/return-refund" className="block text-gray-400 hover:text-orange-400 transition-colors text-sm">
+              <Link
+                href="/return-refund"
+                className="block text-gray-400 hover:text-orange-400 transition-colors text-sm"
+              >
                 Return and Refund
               </Link>
-              <Link href="/privacy-policy" className="block text-gray-400 hover:text-orange-400 transition-colors text-sm">
+              <Link
+                href="/privacy-policy"
+                className="block text-gray-400 hover:text-orange-400 transition-colors text-sm"
+              >
                 Privacy Policy
               </Link>
-              <Link href="/terms-of-service" className="block text-gray-400 hover:text-orange-400 transition-colors text-sm">
+              <Link
+                href="/terms-of-service"
+                className="block text-gray-400 hover:text-orange-400 transition-colors text-sm"
+              >
                 Terms of Service
               </Link>
             </div>
           </div>
 
           {/* Social Links */}
-          <div className="text-center md:text-left">
-            <h4 className="text-base font-semibold mb-4 text-white">Follow Us</h4>
-            <div className="flex gap-3 justify-center md:justify-start">
-              <Link href="https://linkedin.com" className="text-gray-400 hover:text-orange-400 transition-colors p-1 rounded hover:bg-gray-800/50">
+          <div className="text-left">
+            <h4 className="text-base font-semibold mb-4 text-white">
+              Follow Us
+            </h4>
+            <div className="flex gap-3 justify-start">
+              <Link
+                href="https://linkedin.com"
+                className="text-gray-400 hover:text-orange-400 transition-colors p-1 rounded hover:bg-gray-800/50"
+              >
                 <Linkedin size={20} />
               </Link>
-              <Link href="https://x.com" className="text-gray-400 hover:text-orange-400 transition-colors p-1 rounded hover:bg-gray-800/50">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              <Link
+                href="https://x.com"
+                className="text-gray-400 hover:text-orange-400 transition-colors p-1 rounded hover:bg-gray-800/50"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                 </svg>
               </Link>
-              <Link href="https://github.com" className="text-gray-400 hover:text-orange-400 transition-colors p-1 rounded hover:bg-gray-800/50">
+              <Link
+                href="https://github.com"
+                className="text-gray-400 hover:text-orange-400 transition-colors p-1 rounded hover:bg-gray-800/50"
+              >
                 <Facebook size={20} />
               </Link>
-              <Link href="https://instagram.com" className="text-gray-400 hover:text-orange-400 transition-colors p-1 rounded hover:bg-gray-800/50">
+              <Link
+                href="https://instagram.com"
+                className="text-gray-400 hover:text-orange-400 transition-colors p-1 rounded hover:bg-gray-800/50"
+              >
                 <Instagram size={20} />
               </Link>
-              <Link href="https://youtube.com" className="text-gray-400 hover:text-orange-400 transition-colors p-1 rounded hover:bg-gray-800/50">
+              <Link
+                href="https://youtube.com"
+                className="text-gray-400 hover:text-orange-400 transition-colors p-1 rounded hover:bg-gray-800/50"
+              >
                 <Youtube size={20} />
               </Link>
             </div>

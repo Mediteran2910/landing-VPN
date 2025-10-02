@@ -27,7 +27,6 @@ export default function Kickastarter() {
             </li>
           </ul>
           <ul className="custom-list-style">
-            <li>Lifetime warranty on the device</li>
             <li>Lifetime priority support</li>
             <li>Early shipping before public release</li>
             <li>Exclusive backer updates & community access</li>
