@@ -81,7 +81,7 @@ export default function () {
           >
             {/* Recommended Badge */}
             <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-orange-500 text-black px-4 py-1 rounded-full text-sm font-bold">
-              RECOMMENDED
+              Most Popular
             </div>
 
             <div className="mb-6">
