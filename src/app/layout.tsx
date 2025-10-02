@@ -2,10 +2,6 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-export const metadata = {
-  title: "Home | BuraVPN",
-  description: "Welcome to the Home page",
-};
 export default function RootLayout({
   children,
 }: {

@@ -1,101 +1,130 @@
-import {
-  HandCoins,
-  MapPinHouse,
-  GlobeLock,
-  Shield,
-  Wrench,
-  Check,
-  X,
-} from "lucide-react";
+"use client";
+import { Shield, Wifi, Timer, DollarSign, AlertTriangle } from "lucide-react";
+import { motion } from "framer-motion";
+
+const traditionVpnOffers = [
+  {
+    threat: "Monthly Fees",
+    cost: "$10-15/month",
+    desc: "Pay $150+ per year forever",
+    icon: DollarSign,
+    color: "text-red-400",
+  },
+  {
+    threat: "Complex Setup",
+    cost: "Hours of config",
+    desc: "Each device needs manual setup",
+    icon: AlertTriangle,
+    color: "text-yellow-400",
+  },
+  {
+    threat: "Speed Loss",
+    cost: "50-80% slower",
+    desc: "Traffic bottlenecks kill speed",
+    icon: Timer,
+    color: "text-orange-400",
+  },
+  {
+    threat: "Limited Devices",
+    cost: "5-10 device limit",
+    desc: "Extra fees for more protection",
+    icon: Wifi,
+    color: "text-red-400",
+  },
+];
 
 export default function Comparison() {
   return (
-    <article
-      id="comparison"
-      className="w-full py-16 md:py-20 bg-gradient-to-r from-[#F5F5F5] 44% via-[#BEBEBE] 50% to-[#F5F5F5] 56%"
-    >
-      <div className="max-w-[95vw] lg:max-w-[70vw] mx-auto text-center px-4 sm:px-6 md:px-12 text-black">
-        <h2
-          className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold bg-clip-text text-transparent 
-            bg-gradient-to-r from-gray-900 via-gray-700 to-gray-500 px-1 mb-4 tracking-tight hover:from-gray-800 hover:via-gray-600 hover:to-gray-400 transition-all duration-300"
-        >
-          We are better.
-        </h2>
-        <p className="text-lg text-gray-700 hover:text-gray-900 transition-colors duration-300">
-          Why we are better than traditional VPN solutions? It's simple.
-        </p>
+    <section className="py-20 bg-gradient-to-b from-gray-900/50 to-red-950/20">
+      <div className="container mx-auto px-4">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl lg:text-5xl font-bold mb-8">
+              Why choose{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-500">
+                {" "}
+                BuraVPN
+              </span>
+              ?
+            </h2>
+            <h2 className="text-2xl lg:text-3xl font-bold mb-8 text-red-400">
+              Because Traditional VPNs Are Broken.
+            </h2>
+          </motion.div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            {traditionVpnOffers.map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1, duration: 0.6 }}
+                  viewport={{ once: true }}
+                  className="bg-gray-900/60 border border-red-500/20 rounded-xl p-6 hover:border-red-500/40 transition-all"
+                >
+                  <Icon className={`h-8 w-8 ${item.color} mb-4`} />
+                  <h3 className="text-lg font-bold mb-2 text-red-200">
+                    {item.threat}
+                  </h3>
+                  <div className="text-2xl font-bold text-red-400 mb-2">
+                    {item.cost}
+                  </div>
+                  <p className="text-gray-400 text-sm">{item.desc}</p>
+                </motion.div>
+              );
+            })}
+          </div>
+          <motion.div
+            className="text-center bg-gradient-to-r from-green-950/30 to-blue-950/30 border border-green-500/20 rounded-2xl p-8"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <Shield className="h-16 w-16 text-green-400 mx-auto mb-6" />
+            <h3 className="text-3xl lg:text-4xl font-bold mb-4">
+              BuraVPN:{" "}
+              <span className="text-green-400">Hardware-Level Protection</span>
+            </h3>
+            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+              One router protects everything. Zero monthly fees. Perfect
+              security with full speed.
+            </p>
 
-        <div className="grid gap-6 mt-10">
-          {[
-            {
-              left: "One-time payment for a lifetime of access, no subscriptions.",
-              icon: HandCoins,
-              right: "Endless subscription fees to maintain service.",
-              label: "Pricing",
-            },
-            {
-              left: "Dedicated residential IP that bypasses blocks.",
-              icon: MapPinHouse,
-              right: "Shared, low-reputation IPs from anonymous data centers.",
-              label: "IP Address",
-            },
-            {
-              left: "Hardware-based protection for your entire network.",
-              icon: Shield,
-              right:
-                "Requires software on every device and leaves others unprotected.",
-              label: "Security",
-            },
-            {
-              left: "Your home IP works everywhere, bypassing all geo-blocks.",
-              icon: GlobeLock,
-              right:
-                "Easily detected and blocked by most streaming and financial sites.",
-              label: "Geo-Blocking",
-            },
-            {
-              left: "True plug-and-play simplicity with zero configuration.",
-              icon: Wrench,
-              right: "Complicated configuration on multiple devices.",
-              label: "Setup",
-            },
-          ].map((item, idx) => (
-            <div
-              key={idx}
-              className="bg-white/10 backdrop-blur-sm shadow-sm rounded-xl p-6 md:p-8 flex flex-col md:flex-row items-center md:items-stretch gap-6 hover:bg-white/20 hover:shadow-lg hover:shadow-gray-400/30 hover:scale-[1.02] transition-all duration-300 ease-in-out group cursor-pointer"
-            >
-              <div className="flex items-start gap-2 md:w-2/5 group-hover:transform group-hover:translate-x-1 transition-transform duration-300 ease-in-out">
-                <Check
-                  className="h-6 w-6 text-green-600 shrink-0 mt-1 md:mt-0 group-hover:text-green-500 group-hover:scale-110 transition-all duration-300"
-                  strokeWidth={3}
-                />
-                <p className="text-sm sm:text-base md:text-lg text-black font-semibold leading-relaxed group-hover:text-gray-900 transition-colors duration-300">
-                  {item.left}
-                </p>
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              <div className="text-center">
+                <h4 className="text-lg font-semibold mb-4 text-green-400">
+                  ✓ What You Get:
+                </h4>
+                <ul className="space-y-2 text-gray-300">
+                  <li>• Unlimited devices protected</li>
+                  <li>• Full internet speed maintained</li>
+                  <li>• Access your home IP globally</li>
+                  <li>• Zero configuration needed</li>
+                </ul>
               </div>
-
-              <div className="flex flex-col items-center md:w-1/5">
-                <div className="flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-r from-gray-900 via-gray-700 to-gray-500 group-hover:from-gray-800 group-hover:via-gray-600 group-hover:to-gray-400 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-gray-600/50 transition-all duration-300 ease-in-out">
-                  <item.icon className="h-6 w-6 md:h-8 md:w-8 text-white group-hover:scale-110 transition-transform duration-300" />
-                </div>
-                <span className="text-xs md:text-sm font-medium mt-2 text-gray-600 tracking-wide group-hover:text-gray-800 group-hover:font-semibold transition-all duration-300">
-                  {item.label}
-                </span>
-              </div>
-
-              <div className="flex items-start justify-between gap-2 md:w-2/5 group-hover:transform group-hover:-translate-x-1 transition-transform duration-300 ease-in-out">
-                <p className="text-sm sm:text-base md:text-lg text-gray-700 font-normal leading-relaxed group-hover:text-gray-500 transition-colors duration-300">
-                  {item.right}
-                </p>
-                <X
-                  className="h-6 w-6 text-red-600 shrink-0 group-hover:text-red-500 group-hover:scale-110 group-hover:rotate-90 transition-all duration-300"
-                  strokeWidth={3}
-                />
+              <div className="text-center">
+                <h4 className="text-lg font-semibold mb-4 text-red-400">
+                  ✗ What You Don't Pay:
+                </h4>
+                <ul className="space-y-2 text-gray-400">
+                  <li>• Monthly subscription fees</li>
+                  <li>• Software licensing costs</li>
+                  <li>• Per-device charges</li>
+                  <li>• Technical support fees</li>
+                </ul>
               </div>
             </div>
-          ))}
+          </motion.div>
         </div>
       </div>
-    </article>
+    </section>
   );
 }
