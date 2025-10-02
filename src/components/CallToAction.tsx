@@ -1,7 +1,21 @@
 "use client";
 import Link from "next/link";
 import { motion } from "framer-motion";
-export default function CallToAction() {
+
+type Props = {
+  titleCTA?: string;
+  titleCTA_span?: string;
+  btnCTA_text?: string;
+  paragraphCTA?: string;
+  caption?: string;
+};
+export default function CallToAction({
+  titleCTA,
+  titleCTA_span,
+  btnCTA_text,
+  paragraphCTA,
+  caption,
+}: Props) {
   return (
     <section className="py-20 bg-gradient-to-b from-red-950/20 to-transparent">
       <div className="container mx-auto px-4 text-center">
@@ -12,15 +26,14 @@ export default function CallToAction() {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            Ready to Stop
+            {titleCTA}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">
               {" "}
-              Monthly Fees?
+              {titleCTA_span}
             </span>
           </h2>
           <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-            Join 50,000+ users who chose one-time payment over monthly
-            subscriptions.
+            {paragraphCTA}
           </p>
 
           <div className="flex justify-center mb-8">
@@ -30,13 +43,13 @@ export default function CallToAction() {
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Get Your VPN Router - $85
+                {btnCTA_text}
               </motion.button>
             </Link>
           </div>
 
           <div className="flex justify-center gap-8 text-sm text-gray-500">
-            <span>✓ No monthly fees</span>
+            <span>{caption}</span>
           </div>
         </motion.div>
       </div>
