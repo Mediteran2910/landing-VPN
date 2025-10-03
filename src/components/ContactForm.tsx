@@ -136,7 +136,9 @@ export default function ContactForm() {
                   className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-xl text-white focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-all"
                 >
                   {subjectsOptions.map((s) => (
-                    <option value={s.value}>{s.option}</option>
+                    <option value={s.value} key={s.value}>
+                      {s.option}
+                    </option>
                   ))}
                 </select>
               </div>
@@ -170,8 +172,6 @@ export default function ContactForm() {
                 {isSubmitting ? "Sending..." : "Send Message"}
               </motion.button>
             </form>
-
-            {/* Alternative Contact */}
             <div className="mt-8 pt-6 border-t border-gray-700/50 text-center">
               <p className="text-gray-400 text-sm">
                 Or email us directly at:{" "}
@@ -179,7 +179,7 @@ export default function ContactForm() {
                   href="mailto:support@vpnrouter.com"
                   className="text-orange-400 hover:text-orange-300 font-semibold transition-colors"
                 >
-                  support@vpnrouter.com
+                  info@buravpn.com
                 </a>
               </p>
             </div>

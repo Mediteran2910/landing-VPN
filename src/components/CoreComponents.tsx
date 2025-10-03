@@ -5,7 +5,7 @@ import { Shield, Router } from "lucide-react";
 export default function CoreComponents() {
   return (
     <section className="py-12">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4" id="core-components">
         <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: 30 }}

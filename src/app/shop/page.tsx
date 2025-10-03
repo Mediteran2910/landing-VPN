@@ -35,7 +35,6 @@ export default function ShopPage() {
               routersNumber={2}
             />
           </div>
-          <Guarantee />
         </div>
       </section>
     </main>

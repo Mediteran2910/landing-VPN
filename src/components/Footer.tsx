@@ -38,10 +38,16 @@ export default function Footer() {
                 About Us
               </Link>
               <Link
-                href="/vpn-name"
+                href="/how-it-works/#core-components"
                 className="block text-gray-400 hover:text-orange-400 transition-colors text-sm"
               >
-                VPN-Name
+                Setup Components
+              </Link>
+              <Link
+                href="/how-it-works/#setup-proces"
+                className="block text-gray-400 hover:text-orange-400 transition-colors text-sm"
+              >
+                Setup Proces
               </Link>
               <Link
                 href="/shop"
