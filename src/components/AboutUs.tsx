@@ -1,5 +1,31 @@
 "use client";
 import { motion } from "framer-motion";
+import { div, h3 } from "framer-motion/client";
+import {
+  Icon,
+  BriefcaseBusiness,
+  Network,
+  SquareFunction,
+  SquareDashedBottomCode,
+  Shield,
+  Palette,
+} from "lucide-react";
+
+const team = [
+  {
+    role: "Business Managers",
+    icon: <BriefcaseBusiness color="#22c55e" size={45} />,
+  },
+  {
+    role: "Linux Embedded Network Engineers",
+    icon: <Network color="#a855f7" size={45} />,
+  },
+  {
+    role: "Software Developers",
+    icon: <SquareDashedBottomCode color="#3b82f6" size={45} />,
+  },
+];
+
 export default function AboutUs() {
   return (
     <section
@@ -26,35 +52,30 @@ export default function AboutUs() {
             <p className="text-xl text-gray-300 mb-6 leading-relaxed">
               We're a{" "}
               <strong className="text-orange-400">
-                European cybersecurity startup
+                European open-source startup
               </strong>{" "}
-              Founded in 2025, specializing in enterprise-grade privacy
-              solutions. Our mission is simple: make VPN protection accessible
-              with a one-time payment instead of endless monthly subscriptions.
-              With buraVPN, users can enjoy the benefits of a residential IP
-              address and protect all their devices through our secure buraVPN
-              router.
+              Founded in 2025, BuraVPN is an open-source project dedicated to
+              giving people secure and easy access to their home IP from
+              anywhere in the world. Our mission is simple: empower users to
+              protect all their devices while maintaining full control over
+              their network. With BuraVPN, you can safely connect through our
+              secure BuraVPN router and enjoy privacy and convenience without
+              endless subscription fees.
             </p>
-            {/* <div className="grid md:grid-cols-3 gap-8 mt-12">
-              <div>
-                <div className="text-3xl font-bold text-green-400 mb-2">
-                  50K+
+            <h2 className="text-4xl font-bold m-8 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">
+              BuraVPN Team
+            </h2>
+            <div className="grid md:grid-cols-3 gap-8 mt-12">
+              {team.map((t) => (
+                <div
+                  key={t.role}
+                  className="flex flex-col items-center justify-center border rounded-xl border-gray-800 p-4 bg-gray-900/30 hover:border-gray-500 hover:bg-gray-800/40 transition-colors duration-300 ease-in-out"
+                >
+                  {t.icon}
+                  <h3 className="text-gray-400 mt-3">{t.role}</h3>
                 </div>
-                <div className="text-gray-400">Protected Networks</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-orange-400 mb-2">
-                  $1.2M+
-                </div>
-                <div className="text-gray-400">Saved on Subscriptions</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-blue-400 mb-2">
-                  24/7
-                </div>
-                <div className="text-gray-400">Support Available</div>
-              </div>
-            </div> */}
+              ))}
+            </div>
           </div>
         </motion.div>
       </div>
