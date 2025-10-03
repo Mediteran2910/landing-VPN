@@ -54,14 +54,14 @@ export default function AboutUs() {
               <strong className="text-orange-400">
                 European open-source startup
               </strong>{" "}
-              Founded in 2025, BuraVPN is an open-source project dedicated to
-              giving people secure and easy access to their home IP from
-              anywhere in the world. Our mission is simple: empower users to
-              protect all their devices while maintaining full control over
-              their network. With BuraVPN, you can safely connect through our
-              secure BuraVPN router and enjoy privacy and convenience without
-              endless subscription fees.
+              founded in 2025. BuraVPN is all about giving you secure, easy
+              access to your home IP from anywhere in the world. Our mission is
+              simple: help you protect all your devices while staying in full
+              control of your network. With our open-source BuraVPN router, you
+              can enjoy privacy, convenience, and freedom — without getting
+              stuck in endless subscription plans.
             </p>
+
             <h2 className="text-4xl font-bold m-8 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">
               BuraVPN Team
             </h2>
