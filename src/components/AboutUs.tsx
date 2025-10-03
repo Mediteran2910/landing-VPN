@@ -2,7 +2,10 @@
 import { motion } from "framer-motion";
 export default function AboutUs() {
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-900/50 to-transparent">
+    <section
+      className="py-20 bg-gradient-to-b from-gray-900/50 to-transparent"
+      id="about-us"
+    >
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -23,14 +26,16 @@ export default function AboutUs() {
             <p className="text-xl text-gray-300 mb-6 leading-relaxed">
               We're a{" "}
               <strong className="text-orange-400">
-                European cybersecurity company
+                European cybersecurity startup
               </strong>{" "}
-              founded in 2025, specializing in enterprise-grade privacy
+              Founded in 2025, specializing in enterprise-grade privacy
               solutions. Our mission is simple: make VPN protection accessible
               with a one-time payment instead of endless monthly subscriptions.
+              With buraVPN, users can enjoy the benefits of a residential IP
+              address and protect all their devices through our secure buraVPN
+              router.
             </p>
-
-            <div className="grid md:grid-cols-3 gap-8 mt-12">
+            {/* <div className="grid md:grid-cols-3 gap-8 mt-12">
               <div>
                 <div className="text-3xl font-bold text-green-400 mb-2">
                   50K+
@@ -49,7 +54,7 @@ export default function AboutUs() {
                 </div>
                 <div className="text-gray-400">Support Available</div>
               </div>
-            </div>
+            </div> */}
           </div>
         </motion.div>
       </div>

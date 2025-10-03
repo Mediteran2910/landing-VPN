@@ -65,7 +65,7 @@ export default function ContactForm() {
   return (
     <section className="pt-32 pb-20">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto" id="contact-form">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

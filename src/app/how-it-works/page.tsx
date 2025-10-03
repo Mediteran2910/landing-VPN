@@ -14,7 +14,6 @@ export default function HowItWorksPage() {
       <HowWorksHero />
       <CoreComponents />
       <SetupProces />
-      <CoreComponents />
       <CallToAction
         btnCTA_text="Get Your VPN Router - $85"
         titleCTA_span="Monthly Fees?"

@@ -18,9 +18,7 @@ export default function Footer() {
   return (
     <footer className="bg-gradient-to-t from-[#0D0D0D] via-[#171717] to-[#0D0D0D] text-gray-300 py-12 px-8 md:px-16 border-t border-gray-600">
       <div className="max-w-6xl mx-auto">
-        {/* Main Footer Content */}
         <div className="grid md:grid-cols-4 gap-8 mb-8">
-          {/* Brand Section */}
           <div className="text-left">
             <h3 className="text-2xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">
               VPN-LOGO
@@ -30,13 +28,11 @@ export default function Footer() {
               fees, unlimited protection.
             </p>
           </div>
-
-          {/* Know Us */}
           <div className="text-left">
             <h4 className="text-base font-semibold mb-4 text-white">Know Us</h4>
             <div className="space-y-2">
               <Link
-                href="/about"
+                href="/contact/#about-us"
                 className="block text-gray-400 hover:text-orange-400 transition-colors text-sm"
               >
                 About Us
@@ -54,15 +50,13 @@ export default function Footer() {
                 Shop
               </Link>
               <Link
-                href="/affiliate"
+                href="/contact/#contact-form"
                 className="block text-gray-400 hover:text-orange-400 transition-colors text-sm"
               >
                 Affiliate
               </Link>
             </div>
           </div>
-
-          {/* Policies */}
           <div className="text-left">
             <h4 className="text-base font-semibold mb-4 text-white">
               Policies
