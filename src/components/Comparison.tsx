@@ -104,7 +104,7 @@ export default function Comparison() {
                   ✓ What You Get:
                 </h4>
                 <ul className="space-y-2 text-gray-300">
-                  <li>• Unlimited devices protected</li>
+                  <li>• Open-source and fully transparent</li>
                   <li>• Full internet speed maintained</li>
                   <li>• Access your home IP globally</li>
                   <li>• Zero configuration needed</li>

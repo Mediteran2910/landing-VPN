@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { DollarSign, Router, Eye } from "lucide-react";
+import { DollarSign, Router, GitPullRequest } from "lucide-react";
 
 const features = [
   {
@@ -16,9 +16,9 @@ const features = [
     color: "text-blue-400",
   },
   {
-    icon: Eye,
-    title: "True Privacy",
-    desc: "Your ISP can't see what you do. Zero activity logs kept",
+    icon: GitPullRequest,
+    title: "Open-Source",
+    desc: "Take back control of your internet — safely and openly.",
     color: "text-purple-400",
   },
 ];
