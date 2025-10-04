@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   Phone,
   Github,
@@ -20,9 +21,13 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div className="text-left">
-            <h3 className="text-2xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">
-              VPN-LOGO
-            </h3>
+            <Image
+              src="/logo-wide.png"
+              width={100}
+              height={100}
+              alt="company logo, wind icon and company name"
+              className="w-[150px] hidden lg:block"
+            ></Image>
             <p className="text-gray-400 text-sm max-w-xs">
               Secure your entire network with one-time purchase. No monthly
               fees, unlimited protection.
@@ -149,7 +154,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-700/50 pt-6 text-center text-gray-500 text-sm">
-          © 2025 Our Startup. All rights reserved.
+          © 2025 BuraVPN. All rights reserved.
         </div>
       </div>
     </footer>
