@@ -1,19 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import {
-  Phone,
-  Github,
-  Linkedin,
-  Twitter,
-  Facebook,
-  Instagram,
-  Youtube,
-  Mail,
-  Shield,
-  Eye,
-  CheckCircle,
-  Server,
-} from "lucide-react";
+import { Linkedin, Facebook, Instagram, Youtube } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -105,8 +92,6 @@ export default function Footer() {
               </Link>
             </div>
           </div>
-
-          {/* Social Links */}
           <div className="text-left">
             <h4 className="text-base font-semibold mb-4 text-white">
               Follow Us
