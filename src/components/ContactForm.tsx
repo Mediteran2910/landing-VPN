@@ -176,7 +176,7 @@ export default function ContactForm() {
               <p className="text-gray-400 text-sm">
                 Or email us directly at:{" "}
                 <a
-                  href="mailto:support@vpnrouter.com"
+                  href="mailto:info@buravpn.com"
                   className="text-orange-400 hover:text-orange-300 font-semibold transition-colors"
                 >
                   info@buravpn.com
