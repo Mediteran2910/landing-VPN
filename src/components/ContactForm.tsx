@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { EmailData } from "../../types";
 
 const subjectsOptions = [
   {
@@ -30,13 +31,14 @@ const subjectsOptions = [
 ];
 
 export default function ContactForm() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<EmailData>({
     name: "",
     email: "",
     subject: "",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -48,18 +50,41 @@ export default function ContactForm() {
       [e.target.name]: e.target.value,
     }));
   };
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitError("");
 
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    alert(
-      `Thanks for your message, ${formData.name}! We'll get back to you soon.`
-    );
-    setFormData({ name: "", email: "", subject: "", message: "" });
-    setIsSubmitting(false);
+      if (response.ok) {
+        alert(
+          "Message sent successfully! We'll get back to you within 24 hours."
+        );
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        const errorData = await response.json();
+        throw new Error(errorData.message || "Failed to send message.");
+      }
+    } catch (error) {
+      console.log(formData);
+      setSubmitError(
+        error instanceof Error ? error.message : "An unexpected error occurred."
+      );
+      alert(
+        submitError ||
+          "Failed to send message. Please try again or contact us directly at info@buravpn.com."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
