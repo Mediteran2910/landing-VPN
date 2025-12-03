@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
-import EmailTemplate from "@/components/EmailTemplate"; // Pretpostavljam da je EmailTemplate ažuriran s @react-email/components
+import EmailTemplate from "@/components/EmailTemplate";
 
 const resend = new Resend(process.env.RESEND_API_KEY!);
 
@@ -36,8 +36,8 @@ export async function POST(request: NextRequest) {
 
     const { data, error } = await resend.emails.send({
       from: `Contact Form <${process.env.RESEND_FROM_EMAIL}>`,
-      to: ["info@buravpn.com"],
-      replyTo: email, // Omogućava odgovor direktno korisniku
+      to: ["info@buravpn.com", "marindonadini00@gmail.com"],
+      replyTo: email,
       subject: `New Contact Form Submission: ${subject}`,
       react: (
         <EmailTemplate
